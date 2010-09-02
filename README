@@ -1,0 +1,13 @@
+author: Steven Kish
+website: http://www.unstrukt.com
+title: Kish Core
+
+Kish Core is a lightweight ActionScript 3 framework designed for modularity and quick implementation.
+
+Features:
+- fully recursive, xml-driven navigation system
+- modified MVC pattern: no centralized model, but controller/view pairs throughout
+- controller/view pair implementation to help manage initializing, revealing, concealing, disposal and stage orientation tasks for custom views
+- convenience classes such as Draw, KText, KURLLoader and KLoader
+- OVP-based KVideoPlayer class
+- SWF Address integration

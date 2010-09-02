@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		
+		<title>:: KISH CORE ::</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="title" content="Kish ActionScript 3.0 Core">
+		<meta name="copyright" content="Steven Kish – 2010">
+		<meta name="author" content="Steven Kish">
+		<meta name="email" content="steven@unstrukt.com">
+		<meta name="rating" content="General">
+		<meta name="description" content="a lightweight ActionScript 3.0 framework for Flash Player 10">
+		<meta name="language" content="EN">
+	
+	        <script type="text/javascript" src="js/swfobject.js"></script>
+	        <script type="text/javascript" src="js/swfaddress.js"></script>
+		
+		<style type="text/css" media="screen">@import url(css/main.css);</style>
+		
+	</head>
+	<body>
+		
+		<div id="content">
+			
+			For the full experience of this website, you'll need the Adobe Flash Player.<br/><br/>
+			<a target='_blank' href='http://get.adobe.com/flashplayer/'>GET THE LATEST FLASH PLAYER HERE</a><br/><br/>
+			
+			
+			<!-- print content -->			
+			<font size="1">COPYRIGHT © 2010  STEVEN KISH  ALL RIGHTS RESERVED.</font>	
+					
+		</div>
+
+		<script type="text/javascript">	
+
+			var flashPlayerMajorVersion = "10.0.0";
+		
+			var so = new SWFObject('bin/ApplicationLoader.swf?application=bin/Application.swf&navigation=xml/navigation.xml', 'application', '100%', '100%', flashPlayerMajorVersion, '#ffffff' );
+			so.useExpressInstall('bin/expressinstall.swf');
+			so.addParam('scale', 'noscale');
+			so.addParam('bgcolor', 'ffffff');
+			so.addParam('allowScriptAccess', 'sameDomain');
+			so.write('content');
+			
+		</script>
+		
+	</body>
+</html>
