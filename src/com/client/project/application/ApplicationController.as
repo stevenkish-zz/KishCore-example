@@ -18,35 +18,32 @@ package com.client.project.application
 	 */
 	public class ApplicationController extends AbstractViewController 
 	{
+		// induce compilation of dynamically referenced classes
 		ClassUtil.register( SectionController );
 		ClassUtil.register( VideoController );
 		
 		public function ApplicationController(host : DisplayObjectContainer, props : Object = null) 
 		{
 			super(host, props);
-			initializeSignal.addOnce( initializedResponse );
 		}
 		
 		override public function init():void
 		{
-			var xmlLdr:KURLLoader = new KURLLoader( { url:Application.instance.stage.loaderInfo.parameters['navigation'], autoStart:true } );
+			var navigationDataPath:String = Application.instance.stage.loaderInfo.parameters['navigation'];
+			var xmlLdr:KURLLoader = new KURLLoader( { url:navigationDataPath, autoStart:true } );
 	        xmlLdr.completeSignal.add( completeResponse );
 		}
 
 	 	private function completeResponse( data:String ):void
 		{		
-			NavigationManager.mapNavigationData( data );
+			NavigationManager.instance.mapNavigationData( data );
 			ApplicationInitializer.instance.init();
-			super.init();
-		}
-
-		private function initializedResponse():void
-		{
+		
 			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) );
 			new MainNavController( new KSprite( Application.instance ) ).init();
 			new PerformanceMonitor( new KSprite( Application.instance ));
-			
-			show();
+
+			super.init();
 		}
 	}
 }

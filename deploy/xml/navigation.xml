@@ -2,138 +2,138 @@
 
 <node friendly='root'>
 
-	<node friendly='1' className='com.client.project.video::VideoController'>
+	<node friendly='1' fullyQualifiedClassName='com.client.project.video::VideoController'>
 
-		<prop name='label'><![CDATA[Section 1]]></prop>
-		<prop name='content'><![CDATA[]]></prop>
+		<prop key='label'><![CDATA[Video Player Sample]]></prop>
+		<prop key='content'><![CDATA[]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='1.a'>
-			<prop name='label'><![CDATA[Section 1.a]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 1.a]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 
 			<!-- Subsections -->
 			<node friendly='1.a.1'>
-				<prop name='label'><![CDATA[Section 1.a.1]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+				<prop key='label'><![CDATA[Section 1.a.1]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 			</node>
 
 			<node friendly='1.a.2'>
-				<prop name='label'><![CDATA[Section 1.a.2]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+				<prop key='label'><![CDATA[Section 1.a.2]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 			</node>			
 		</node>
 
 		<node friendly='1.b'>
-			<prop name='label'><![CDATA[Section 1.b]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 1.b]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 
 			<!-- Subsections -->
 			<node friendly='1.b.1'>
-				<prop name='label'><![CDATA[Section 1.b.1]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+				<prop key='label'><![CDATA[Section 1.b.1]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 
 				<!-- Subsections -->
 				<node friendly='1.b.1.a'>
-					<prop name='label'><![CDATA[Section 1.b.1.a]]></prop>
-					<prop name='content'><![CDATA[]]></prop>
+					<prop key='label'><![CDATA[Section 1.b.1.a]]></prop>
+					<prop key='content'><![CDATA[]]></prop>
 				</node>
 
 				<node friendly='1.b.1.b'>
-					<prop name='label'><![CDATA[Section 1.b.1.b]]></prop>
-					<prop name='content'><![CDATA[]]></prop>
+					<prop key='label'><![CDATA[Section 1.b.1.b]]></prop>
+					<prop key='content'><![CDATA[]]></prop>
 				</node>			
 			</node>
 
 			<node friendly='1.b.2'>
-				<prop name='label'><![CDATA[Section 1.b.2]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+				<prop key='label'><![CDATA[Section 1.b.2]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 			</node>
 		</node>
 
 		<node friendly='1.c'>
-			<prop name='label'><![CDATA[Section 1.c]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 1.c]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='1.d'>
-			<prop name='label'><![CDATA[Section 1.d]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 1.d]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 	</node>
 
 
-	<node friendly='2' className='com.client.project.section::SectionController'>
+	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop name='label'><![CDATA[Section 2]]></prop>
-		<prop name='content'><![CDATA[]]></prop>
+		<prop key='label'><![CDATA[Sample Section 1]]></prop>
+		<prop key='content'><![CDATA[]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='2.a'>
-			<prop name='label'><![CDATA[Section 2.a]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 2.a]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='2.b'>
-			<prop name='label'><![CDATA[Section 2.b]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 2.b]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 
 			<!-- Subsections -->
-			<node friendly='2.b.1'  className='com.client.project.section::SectionController'>
-				<prop name='label'><![CDATA[Section 2.b.1]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+			<node friendly='2.b.1'  fullyQualifiedClassName='com.client.project.section::SectionController'>
+				<prop key='label'><![CDATA[Section 2.b.1]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 
 				<!-- Subsections -->
-				<node friendly='2.b.1.a'  className='com.client.project.section::SectionController'>
-					<prop name='label'><![CDATA[Section 2.b.1.a]]></prop>
-					<prop name='content'><![CDATA[]]></prop>
+				<node friendly='2.b.1.a'  fullyQualifiedClassName='com.client.project.section::SectionController'>
+					<prop key='label'><![CDATA[Section 2.b.1.a]]></prop>
+					<prop key='content'><![CDATA[]]></prop>
 				</node>
 			</node>
 
-			<node friendly='2.b.2' className='com.client.project.section::SectionController'>
-				<prop name='label'><![CDATA[Section 2.b.2]]></prop>
-				<prop name='content'><![CDATA[]]></prop>
+			<node friendly='2.b.2' fullyQualifiedClassName='com.client.project.section::SectionController'>
+				<prop key='label'><![CDATA[Section 2.b.2]]></prop>
+				<prop key='content'><![CDATA[]]></prop>
 			</node>
 		</node>
 
 		<node friendly='2.c'>
-			<prop name='label'><![CDATA[Section 2.c]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 2.c]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='2.d'>
-			<prop name='label'><![CDATA[Section 2.d]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 2.d]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 	</node>
 
 
-	<node friendly='3' className='com.client.project.section::SectionController'>
+	<node friendly='3' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop name='label'><![CDATA[Section 3]]></prop>
-		<prop name='content'><![CDATA[]]></prop>
+		<prop key='label'><![CDATA[Sample Section 2]]></prop>
+		<prop key='content'><![CDATA[]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='3.a'>
-			<prop name='label'><![CDATA[Section 3.a]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 3.a]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='3.b'>
-			<prop name='label'><![CDATA[Section 3.b]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 3.b]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='3.c'>
-			<prop name='label'><![CDATA[Section 3.c]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 3.c]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 		<node friendly='3.d'>
-			<prop name='label'><![CDATA[Section 3.d]]></prop>
-			<prop name='content'><![CDATA[]]></prop>
+			<prop key='label'><![CDATA[Section 3.d]]></prop>
+			<prop key='content'><![CDATA[]]></prop>
 		</node>
 
 	</node>

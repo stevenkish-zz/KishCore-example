@@ -24,7 +24,10 @@ package
 	{
 		private static var _instance : Application;
 
-		public static function get instance() : Application { return _instance }
+		public static function get instance() : Application 
+		{ 
+			return _instance;
+		}
 	
 		/**
 		 * @constructor
@@ -39,25 +42,14 @@ package
 				start();
 		}
 		
+		/**
+		 * Although, typically with KishCore, a subclass of AbstractViewController will instantiate it's own view,
+		 * here, the view is created firstly as a swf and subsequently declares it's own controller
+		 */
 		public function start():void
 		{
 			trace( 'Application::start() ' );
 			new ApplicationController( stage, { view:this } ).init();
-		}
-
-		/**
-		 * Initialize
-		 */
-		override public function init():void
-		{
-			trace( 'Application::init()' );
-			super.init();
-		}
-		
-		override public function show():void
-		{
-			trace( 'Application::show() ' );
-			super.show();
 		}
 	}
 }

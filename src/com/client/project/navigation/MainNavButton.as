@@ -3,7 +3,6 @@ package com.client.project.navigation
 	import com.greensock.TweenLite;
 	import com.kish.control.button.KButton;
 	import com.kish.core.control.NavigationManager;
-	import com.kish.display.Draw;
 	import com.kish.text.KText;
 
 	import flash.display.DisplayObjectContainer;
@@ -24,7 +23,6 @@ package com.client.project.navigation
 		
 		private function build():void
 		{
-			Draw.rect(graphics);
 			_txt = new KText( this, { alpha:.5 } );
 			_txt.htmlText = String('<h2>').concat( _data.label ).concat('</h2>');
 		}

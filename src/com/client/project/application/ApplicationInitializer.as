@@ -15,20 +15,23 @@ package com.client.project.application
 	public class ApplicationInitializer 
 	{
 		// embed css
-		[Embed(source="/embeds/css/flash.css", mimeType="application/octet-stream")]
+		[Embed(source="/assets/css/flash.css", mimeType="application/octet-stream")]
 		private const FlashCSS:Class;
 					
 		// embed xml
-		[Embed(source="/embeds/xml/config.xml", mimeType="application/octet-stream")]
+		[Embed(source="/assets/xml/config.xml", mimeType="application/octet-stream")]
 		private const ConfigXML:Class;
 				
 		// embed fonts
-		[Embed(source='/embeds/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
+		[Embed(source='/assets/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
 		public var _Arial:Class;
 
 		// property access
 		private var _config:XML;
-		public function get config():XML { return _config }		
+		public function get config():XML 
+		{ 
+			return _config;
+		}		
 			
 		// construktor
 		public function ApplicationInitializer( enforcer : SingletonEnforcer )
