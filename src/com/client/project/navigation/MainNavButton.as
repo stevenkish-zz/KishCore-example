@@ -18,24 +18,12 @@ package com.client.project.navigation
 		{
 			super( host, init );
 			build();
-			show();
 		}
 		
 		private function build():void
 		{
 			_txt = new KText( this, { alpha:.5 } );
 			_txt.htmlText = String('<h2>').concat( _data.label ).concat('</h2>');
-		}
-		
-		public function show():void
-		{
-			visible = true;
-			TweenLite.to( this, .5, { alpha:1 } );
-		}
-	
-		public function hide():void
-		{
-			visible = false;
 		}
 		
 		override protected function click():void

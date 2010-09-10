@@ -40,8 +40,10 @@ package com.client.project.application
 			ApplicationInitializer.instance.init();
 		
 			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) );
-			new MainNavController( new KSprite( Application.instance ) ).init();
 			new PerformanceMonitor( new KSprite( Application.instance ));
+			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
+			nav.init();
+			nav.show();
 
 			super.init();
 		}

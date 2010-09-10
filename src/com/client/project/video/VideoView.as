@@ -1,7 +1,8 @@
 package com.client.project.video
 {
+	import com.client.project.transition.FadeIn;
+	import com.client.project.transition.FadeOut;
 	import com.client.project.video.controls.VideoControls;
-	import com.greensock.TweenLite;
 	import com.kish.core.view.AbstractView;
 	import com.kish.display.Alignment;
 	import com.kish.garbage.Garbage;
@@ -12,6 +13,11 @@ package com.client.project.video
 
 	public class VideoView extends AbstractView
 	{		
+		[RevealEffect]
+		public var fadeIn:FadeIn;
+		
+		[ConcealEffect]
+		public var fadeOut:FadeOut;
 		
 		private var _vid:KVideoPlayer;
 		private var _controls:VideoControls;
@@ -36,16 +42,11 @@ package com.client.project.video
 			super.place();
 		}
 				
-		override public function show():void
-		{
-			TweenLite.from( this, .5, { alpha:0, onComplete:super.show } );
-		}
-		
 		override public function hide():void
 		{
 			_vid.pause();
 			_vid.killStream();
-			TweenLite.to( this, .5, { alpha:0, onComplete:super.hide } );
+			super.hide();
 		}
 		
 		override public function dispose():void

@@ -1,5 +1,7 @@
 package com.client.project.navigation
 {
+	import com.client.project.transition.FadeIn;
+	import com.client.project.transition.FadeOut;
 	import com.kish.core.view.AbstractView;
 	import com.kish.display.Alignment;
 	import com.kish.display.KSprite;
@@ -8,6 +10,11 @@ package com.client.project.navigation
 
 	public class MainNavView extends AbstractView
 	{
+		[RevealEffect]
+		public var fadeIn:FadeIn;
+		
+		[ConcealEffect]
+		public var fadeOut:FadeOut;
 		
 		private var _btnLayer:KSprite;
 			
@@ -37,19 +44,11 @@ package com.client.project.navigation
 		override public function show():void
 		{
 			trace( 'MainNavView::show() ' );
-			var n:int = _btnLayer.numChildren;
-			for ( var i:int=0; i<n; i++ )
-				MainNavButton( _btnLayer.getChildAt( i ) ).show();
-				
 			super.show();			
 		}
 		
 		override public function hide():void
 		{
-			var n:int = _btnLayer.numChildren;
-			for ( var i:int=0; i<n; i++ ) 
-				MainNavButton( _btnLayer.getChildAt( i ) ).hide();
-				
 			super.hide();
 		}
 	}
