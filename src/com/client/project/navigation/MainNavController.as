@@ -2,8 +2,8 @@ package com.client.project.navigation
 {
 	import com.kish.core.control.AbstractViewController;
 	import com.kish.core.control.NavigationManager;
-	import com.kish.core.data.NavigationNode;
-	import com.kish.core.data.Node;
+	import com.kish.core.model.NavigationNode;
+	import com.kish.core.model.Node;
 
 	import flash.display.DisplayObjectContainer;
 
@@ -22,7 +22,7 @@ package com.client.project.navigation
 			super( host, init );
 		}
 		
-		override public function init():void 
+		override public function initialize():void 
 		{
 			_btns = new Vector.<MainNavButton>();
 			
@@ -31,7 +31,7 @@ package com.client.project.navigation
 				_btns.push( MainNavView( view ).addButton( new MainNavButton( null, { data:node as NavigationNode } ) ) );
 				
 			NavigationManager.instance.activeNodeSignal.add( activeNodeResponse );
-			super.init();
+			super.initialize();
 		}	
 		
 		private function activeNodeResponse( node:NavigationNode ):void

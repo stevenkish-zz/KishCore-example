@@ -1,14 +1,14 @@
-package com.client.project.transition
+package com.client.project.animation
 {
 	import com.greensock.TweenLite;
-	import com.kish.transition.AbstractTransition;
+	import com.kish.animation.AbstractAnimation;
 
 	import flash.display.DisplayObject;
 
 	/**
 	 * @author stevenkish
 	 */
-	public class FadeOut extends AbstractTransition
+	public class FadeOut extends AbstractAnimation
 	{
 		
 		public function FadeOut( target:DisplayObject )

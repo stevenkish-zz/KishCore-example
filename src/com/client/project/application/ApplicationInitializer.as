@@ -22,8 +22,8 @@ package com.client.project.application
 		[Embed(source="/assets/xml/config.xml", mimeType="application/octet-stream")]
 		private const ConfigXML:Class;
 				
-		// embed fonts
-		[Embed(source='/assets/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
+		// embed fonts embedAsCFF="false",
+		[Embed(source='/assets/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', embedAsCFF="false", unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
 		public var _Arial:Class;
 
 		// property access
@@ -48,11 +48,11 @@ package com.client.project.application
 			return _instance;
 		}
 
-		public function init():void
+		public function initialize():void
 		{
 			var f:Array = Font.enumerateFonts();
 			for( var i:int = 0; i<f.length; i++) 
-				trace("AppInitializer::init()", f[i].fontName + '; ' + f[i].fontStyle );
+				trace("AppInitializer::initialize()", f[i].fontName + '; ' + f[i].fontStyle );
 			
 			populateFlashVars( Application.instance.stage );
 			parseConfig();

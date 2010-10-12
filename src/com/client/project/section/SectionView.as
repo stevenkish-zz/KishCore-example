@@ -1,20 +1,20 @@
 package com.client.project.section
 {
-	import flash.display.GraphicsSolidFill;
-	import com.client.project.transition.FadeIn;
-	import com.client.project.transition.FadeOut;
+	import com.client.project.animation.FadeIn;
+	import com.client.project.animation.FadeOut;
 	import com.kish.core.view.AbstractView;
 	import com.kish.display.Alignment;
 	import com.kish.display.Draw;
 
 	import flash.display.DisplayObjectContainer;
-
+	import flash.display.GraphicsSolidFill;
+	
 	public class SectionView extends AbstractView 
 	{		
-		[RevealEffect]
+		[Reveal]
 		public var fadeIn:FadeIn;
 		
-		[ConcealEffect]
+		[Conceal]
 		public var fadeOut:FadeOut;
 		
 		public function SectionView( host:DisplayObjectContainer=null, init:Object=null )
@@ -22,12 +22,13 @@ package com.client.project.section
 			super( host, init );
 		}
 		
-		override public function init():void
+		override public function initialize():void
 		{
+			alpha = 0;
 			Draw.rect( graphics, new GraphicsSolidFill( Math.random()*0xffffff ) );
 			alignment = Alignment.CENTER;
 			
-			super.init();
+			super.initialize();
 		}
 	}
 }

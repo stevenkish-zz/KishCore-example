@@ -44,12 +44,12 @@ package
 		
 		/**
 		 * Although, typically with KishCore, a subclass of AbstractViewController will instantiate it's own view,
-		 * here, the view is created firstly as a swf and subsequently declares it's own controller
+		 * here, the view is created firstly as a swf and then subsequently declares it's own controller
 		 */
 		public function start():void
 		{
 			trace( 'Application::start() ' );
-			new ApplicationController( stage, { view:this } ).init();
+			new ApplicationController( stage, { view:this } ).initialize();
 		}
 	}
 }

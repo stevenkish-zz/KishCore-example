@@ -1,7 +1,7 @@
 package com.client.project.navigation
 {
-	import com.client.project.transition.FadeIn;
-	import com.client.project.transition.FadeOut;
+	import com.client.project.animation.FadeIn;
+	import com.client.project.animation.FadeOut;
 	import com.kish.core.view.AbstractView;
 	import com.kish.display.Alignment;
 	import com.kish.display.KSprite;
@@ -10,10 +10,10 @@ package com.client.project.navigation
 
 	public class MainNavView extends AbstractView
 	{
-		[RevealEffect]
+		[Reveal]
 		public var fadeIn:FadeIn;
 		
-		[ConcealEffect]
+		[Conceal]
 		public var fadeOut:FadeOut;
 		
 		private var _btnLayer:KSprite;

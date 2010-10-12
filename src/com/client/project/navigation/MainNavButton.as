@@ -28,7 +28,7 @@ package com.client.project.navigation
 		
 		override protected function click():void
 		{
-			NavigationManager.instance.activeNode = NavigationManager.instance.getNodeByFriendly( _data['friendly'] );
+			NavigationManager.instance.activeNode = _data;
 		}
 		
 		override protected function setSelected():void

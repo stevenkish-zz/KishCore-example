@@ -1,7 +1,7 @@
 package com.client.project.video
 {
-	import com.client.project.transition.FadeIn;
-	import com.client.project.transition.FadeOut;
+	import com.client.project.animation.FadeIn;
+	import com.client.project.animation.FadeOut;
 	import com.client.project.video.controls.VideoControls;
 	import com.kish.core.view.AbstractView;
 	import com.kish.display.Alignment;
@@ -13,10 +13,10 @@ package com.client.project.video
 
 	public class VideoView extends AbstractView
 	{		
-		[RevealEffect]
+		[Reveal]
 		public var fadeIn:FadeIn;
 		
-		[ConcealEffect]
+		[Conceal]
 		public var fadeOut:FadeOut;
 		
 		private var _vid:KVideoPlayer;
@@ -27,12 +27,12 @@ package com.client.project.video
 			super( host, init );
 		}
 		
-		override public function init():void
+		override public function initialize():void
 		{			
 			_vid = new KVideoPlayer( this, { displayWidth:stage.stageWidth, displayHeight:stage.stageHeight, url:'../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv' } );
 			_controls = new VideoControls( this, { y:stage.stageHeight, videoPlayer:_vid } );
 			alignment = Alignment.TOP_LEFT;
-			super.init();
+			super.initialize();
 		}
 		
 		override protected function place():void
@@ -51,7 +51,6 @@ package com.client.project.video
 		
 		override public function dispose():void
 		{
-			trace( 'VideoView::dispose() ' );
 			_vid.dispose();
 			_controls.dispose();
 			

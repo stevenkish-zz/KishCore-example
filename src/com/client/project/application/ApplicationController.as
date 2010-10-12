@@ -27,7 +27,7 @@ package com.client.project.application
 			super(host, props);
 		}
 		
-		override public function init():void
+		override public function initialize():void
 		{
 			var navigationDataPath:String = Application.instance.stage.loaderInfo.parameters['navigation'];
 			var xmlLdr:KURLLoader = new KURLLoader( { url:navigationDataPath, autoStart:true } );
@@ -37,15 +37,15 @@ package com.client.project.application
 	 	private function completeResponse( data:String ):void
 		{		
 			NavigationManager.instance.mapNavigationData( data );
-			ApplicationInitializer.instance.init();
+			ApplicationInitializer.instance.initialize();
 		
-			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) );
+			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
 			new PerformanceMonitor( new KSprite( Application.instance ));
 			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
-			nav.init();
+			nav.initialize();
 			nav.show();
 
-			super.init();
+			super.initialize();
 		}
 	}
 }
