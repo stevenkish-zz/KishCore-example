@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+
+	Recursive navigation data structure to be consumed by NavigationManager once loaded
+	
+	*For the purposes of the default KishCore project, children's children here are not being used,
+	but are meant to prove the recursive data traversal and mapping capabilities of the navigation framework
+	
+	each node, including the root node, has exactly the same structure:
+	
+	friendly: a unique ID 
+	fullyQualifiedClassName: the full path of the AS3 class to instantiate once
+							 the node takes focus in the application
+	<prop> represents any number of dynamic key/value pairs
+
+-->
 <node friendly='root'>
 
 	<node friendly='1' fullyQualifiedClassName='com.client.project.video::VideoController'>
 
-		<prop key='label'><![CDATA[Video Player Sample]]></prop>
+		<prop key='label'><![CDATA[Video Player]]></prop>
 		<prop key='content'><![CDATA[]]></prop>
+		<prop key='videoURL'><![CDATA[../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='1.a'>
@@ -66,7 +82,7 @@
 
 	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop key='label'><![CDATA[Sample Section 1]]></prop>
+		<prop key='label'><![CDATA[Section 1]]></prop>
 		<prop key='content'><![CDATA[]]></prop>
 
 		<!-- Subsections -->
@@ -112,7 +128,7 @@
 
 	<node friendly='3' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop key='label'><![CDATA[Sample Section 2]]></prop>
+		<prop key='label'><![CDATA[Section 2]]></prop>
 		<prop key='content'><![CDATA[]]></prop>
 
 		<!-- Subsections -->

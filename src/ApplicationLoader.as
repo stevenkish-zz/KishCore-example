@@ -9,7 +9,8 @@ package
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.net.URLRequest;
-
+	
+	[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
 	public class ApplicationLoader extends Sprite
 	{		
 		private var _displayLayer:Sprite;
@@ -19,6 +20,7 @@ package
 		{
 			trace( 'ApplicationLoader::ApplicationLoader() ' );
 		    super();
+		    
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
 			

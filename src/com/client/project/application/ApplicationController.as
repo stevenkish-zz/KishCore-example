@@ -9,7 +9,6 @@ package com.client.project.application
 	import com.kish.display.KSprite;
 	import com.kish.net.KURLLoader;
 	import com.kish.util.ClassUtil;
-	import com.kish.util.PerformanceMonitor;
 
 	import flash.display.DisplayObjectContainer;
 
@@ -40,7 +39,7 @@ package com.client.project.application
 			ApplicationInitializer.instance.initialize();
 		
 			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
-			new PerformanceMonitor( new KSprite( Application.instance ));
+	//		new PerformanceMonitor( new KSprite( Application.instance ));
 			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
 			nav.initialize();
 			nav.show();

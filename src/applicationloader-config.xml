@@ -2,15 +2,15 @@
 
 <flex-config>
 <!--	
-	<output>/Users/stevenkish/Workspace/kish/deploy/bin/app_loader.swf</output>
+	<output>${project.directory}/deploy/bin/app_loader.swf</output>
 -->
 	<target-player>10.0.1</target-player>
 	<benchmark>true</benchmark>
 	<default-background-color>#ffffff</default-background-color>
 	<default-frame-rate>40</default-frame-rate>
 	<default-size>
-		<width>1004</width>
-		<height>568</height>
+		<width>320</width>
+		<height>480</height>
 	</default-size>
 	<compiler>
 		<incremental>true</incremental>

@@ -20,6 +20,7 @@ package
 	 * @author Steven Kish
 	 * @since 25.01.2010
 	 */
+	[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
 	public class Application extends AbstractView implements IApplication
 	{
 		private static var _instance : Application;

@@ -8,7 +8,6 @@ package com.client.project.video.controls
 
 	public class VideoControls extends KSprite implements IVideoControls
 	{
-		
 		private var _vid:KVideoPlayer;
 		public function set videoPlayer( v:KVideoPlayer ):void
 		{
@@ -25,7 +24,7 @@ package com.client.project.video.controls
 		{
 			new PlayPauseButton( this, {y:-15, videoPlayer:_vid } );
 			new SeekBar( this, {x:15, y:-15, videoPlayer:_vid } );
-			new MuteUnmuteButton( this, {x:315, y:-15, videoPlayer:_vid } );
+			new MuteUnmuteButton( this, {x:305, y:-15, videoPlayer:_vid } );
 		}
 	}
 }
@@ -89,9 +88,10 @@ internal class PlayPauseButton extends KButton {
 /**
  * @author stevenkish
  */
-internal class SeekBar extends KButton {
+internal class SeekBar extends KButton 
+{
 
-	public static const WIDTH:int = 300;
+	public static const WIDTH:int = 290;
 	public static const HEIGHT:int = 15;
 	
 	private var _load:KShape;

@@ -30,7 +30,7 @@ package com.client.project.navigation
 			if( !_btnLayer ) 
 				_btnLayer = new KSprite( this );
 				
-			var space:int = _btnLayer.numChildren == 0 ? 0 : 80;
+			var space:int = _btnLayer.numChildren == 0 ? 0 : 25;
 			var xPos:int = space + _btnLayer.width;
 			
 			btn.x = xPos;

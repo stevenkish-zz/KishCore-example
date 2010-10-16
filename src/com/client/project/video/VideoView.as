@@ -29,10 +29,27 @@ package com.client.project.video
 		
 		override public function initialize():void
 		{			
-			_vid = new KVideoPlayer( this, { displayWidth:stage.stageWidth, displayHeight:stage.stageHeight, url:'../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv' } );
-			_controls = new VideoControls( this, { y:stage.stageHeight, videoPlayer:_vid } );
+			_vid = new KVideoPlayer( this, { visible:false, displayWidth:stage.stageWidth, displayHeight:stage.stageHeight, url:controller.data['videoURL'], autoStart:false } );
+			_controls = new VideoControls( this, { visible:false, y:stage.stageHeight, videoPlayer:_vid } );
 			alignment = Alignment.TOP_LEFT;
+			
+			place();
+
 			super.initialize();
+		}
+		
+		override public function show():void
+		{
+			this.alpha = 0;
+			_vid.visible = true;
+			_controls.visible = true;
+			super.show();
+		}
+		
+		override protected function onRevealed():void
+		{
+			_vid.start();	
+			super.onRevealed();
 		}
 		
 		override protected function place():void
