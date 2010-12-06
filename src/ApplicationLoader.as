@@ -1,5 +1,7 @@
 package
 {
+	import flash.display.LoaderInfo;
+	import flash.events.IEventDispatcher;
 	import com.kish.core.IApplication;
 
 	import flash.display.DisplayObject;
@@ -31,7 +33,7 @@ package
 		private function build():void
 		{
 			_displayLayer = new Sprite();
-			_spinner = new Spinner( 'CONNECTING...' );
+			_spinner = new Spinner();
 			_displayLayer.addChild( _spinner );
 			stage.addChild( _displayLayer );
 			
@@ -50,7 +52,7 @@ package
 			}
 			catch( e:Error )
 			{
-				throw new Error('** please specify the SWF to load via Flashvars');
+				throw new Error('** please specify the URL of the SWF to load by specifying the FlashVar "application"');
 			}
 		}
 		
@@ -58,15 +60,14 @@ package
 		{
 			trace( 'ApplicationLoader::onLoadComplete() ' );
 
-			_spinner.label = 'LOADED';
 			_spinner.stop();
 
 			stage.removeChild( _displayLayer );
 			stage.removeEventListener( Event.RESIZE, onStageResize );
 
-			e.target.removeEventListener( Event.COMPLETE, _onComplete );
+			IEventDispatcher( e.target ).removeEventListener( Event.COMPLETE, _onComplete );
 			
-			var app:DisplayObject = e.target.content;
+			var app:DisplayObject = LoaderInfo( e.target ).content;
 			stage.addChild( app );
 			IApplication( app ).start();
 		}
@@ -91,7 +92,8 @@ import flash.text.TextFieldAutoSize;
  */
 internal class Spinner extends MovieClip
 {
-	private const RADIUS:uint = 15;
+	private const MESSAGE:String = '<h1>LOADING...</h1>';
+	private const RADIUS:uint = 14;
 	private const NUMBER_OF_DOTS:uint = 12;
 	private const DOT_RADIUS:uint = 2;
 	private const CSS:String = 'h1{font-size:10px;color:#2b3b4b;font-family:_Arial}';
@@ -102,17 +104,20 @@ internal class Spinner extends MovieClip
 
 	private var _spinner:Sprite;
 	private var _txt:TextField;
-	private var _label:String;
 	private var _rotationDegressPerFrame:Number;
 	
-	public function Spinner( label:String='LOADING...', rotationDegressPerFrame:Number=10 )
+	public function Spinner()
 	{
 		super();
 		super.stop();
+		addEventListener( Event.ADDED_TO_STAGE, onAddedToStage );
+	}
+	
+	private function onAddedToStage( e:Event ):void
+	{
+		removeEventListener( Event.ADDED_TO_STAGE, onAddedToStage );
 		
-		_label = label;
-		_rotationDegressPerFrame = rotationDegressPerFrame;
-		
+		_rotationDegressPerFrame = 7;	
 		_spinner = new Sprite();
 		
 		var pos:Number;
@@ -140,17 +145,12 @@ internal class Spinner extends MovieClip
 		_txt.styleSheet = styleSheet;
 		_txt.embedFonts = true;
 		_txt.autoSize = TextFieldAutoSize.CENTER;
-		_setLabel();
+		_txt.htmlText = MESSAGE;
+		_txt.x = -int(_txt.textWidth*.5)-2;
+		_txt.y = RADIUS+9;
 		addChild( _txt );
 		
 		play();
-	}
-	
-	private function _setLabel():void
-	{
-		_txt.htmlText = '<h1>'+_label+'</h1>';
-		_txt.x = -int(_txt.textWidth*.5)-2;
-		_txt.y = RADIUS+6;
 	}
 	
 	private function _onEnterFrame( event:Event ):void
@@ -168,11 +168,5 @@ internal class Spinner extends MovieClip
 	{
 		super.stop();
 		removeEventListener( Event.ENTER_FRAME, _onEnterFrame );
-	}
-	
-	public function set label( value:String ):void
-	{
-		_label = value;
-		_setLabel();
 	}
 }
