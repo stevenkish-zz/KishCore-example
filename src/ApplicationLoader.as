@@ -12,7 +12,7 @@ package
 	import flash.events.Event;
 	import flash.net.URLRequest;
 	
-	[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
+	[SWF(backgroundColor="#FFFFFF", frameRate="32", width="320", height="480")]
 	public class ApplicationLoader extends Sprite
 	{		
 		private var _displayLayer:Sprite;
