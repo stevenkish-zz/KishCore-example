@@ -1,4 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<my:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:my="*">
+<kish:Application 
+	xmlns:kish="kish.*"
+	xmlns:mx="http://www.adobe.com/mxml/2009"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:display="flash.display.*"
+	>
+	
+	<fx:Metadata>
+			[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.client.project.video.VideoController;
+			import kish.display.Draw;
+			import kish.util.ClassUtil;
 
-</my:Application>
+			import com.client.project.application.KishCoreExampleController;
+			import com.client.project.section.SectionController;
+
+			import org.osflash.signals.Signal;
+			
+			ClassUtil.register(SectionController);
+			ClassUtil.register(VideoController);
+			
+			[Controller]
+			/**
+			 * Although, typically with KishCore, a subclass of AbstractViewController is responsible for instantiating it's own view,
+			 * here, the view is created firstly as the main swf and then subsequently declares it's controller
+			 * if no controller is specified, a default instance of ApplicationController will be used
+			 */
+			public var applicationController:KishCoreExampleController;
+			
+			private var _goHomeSignal:Signal = new Signal();
+	
+			public function get goHomeSignal():Signal 
+			{
+				return _goHomeSignal;
+			}
+			
+			override public function start():void
+			{
+				trace( 'KishCoreExample::start() ' );
+				super.start();
+				controller.initialize();
+			}
+			
+			override public function initialize():void
+			{
+				super.initialize();
+				Draw.rect(goHome.graphics, new GraphicsSolidFill( 0xff00ff, 0 ), 0, 0, stage.stageWidth, stage.stageHeight );
+				goHome.addEventListener( MouseEvent.CLICK, onClick );
+			}
+
+			private function onClick( e:Event ):void
+			{
+				_goHomeSignal.dispatch();
+			}
+		]]>
+	</fx:Script>
+	
+	<display:Sprite id="goHome" />
+	
+</kish:Application>

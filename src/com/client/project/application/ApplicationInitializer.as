@@ -1,9 +1,10 @@
-package com.client.project.application
-{
-	import com.greensock.TweenLite;
-	import com.greensock.easing.*;
+package com.client.project.application {
+	import kish.Application;
 	import kish.net.FlashVars;
 	import kish.text.KText;
+
+	import com.greensock.TweenLite;
+	import com.greensock.easing.*;
 
 	import flash.display.Stage;
 	import flash.display.StageAlign;
