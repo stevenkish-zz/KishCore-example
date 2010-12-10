@@ -20,7 +20,7 @@
 	<node friendly='1' fullyQualifiedClassName='com.client.project.video::VideoController'>
 
 		<prop key='label'><![CDATA[Video Player]]></prop>
-		<prop key='content'><![CDATA[]]></prop>
+		<prop key='content'><![CDATA[0x4b4b5b]]></prop>
 		<prop key='videoURL'><![CDATA[../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv]]></prop>
 
 		<!-- Subsections -->
@@ -83,7 +83,7 @@
 	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
 		<prop key='label'><![CDATA[Section 1]]></prop>
-		<prop key='content'><![CDATA[]]></prop>
+		<prop key='content'><![CDATA[0x4b5b4b]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='2.a'>
@@ -129,7 +129,7 @@
 	<node friendly='3' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
 		<prop key='label'><![CDATA[Section 2]]></prop>
-		<prop key='content'><![CDATA[]]></prop>
+		<prop key='content'><![CDATA[0x5b4b4b]]></prop>
 
 		<!-- Subsections -->
 		<node friendly='3.a'>

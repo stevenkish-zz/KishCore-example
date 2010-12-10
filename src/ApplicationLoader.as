@@ -2,7 +2,7 @@ package
 {
 	import flash.display.LoaderInfo;
 	import flash.events.IEventDispatcher;
-	import com.kish.core.IApplication;
+	import kish.core.IApplication;
 
 	import flash.display.DisplayObject;
 	import flash.display.Loader;

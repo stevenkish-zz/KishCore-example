@@ -1,8 +1,7 @@
-package com.client.project.video.controls
-{
-	import com.kish.display.KSprite;
-	import com.kish.video.IVideoControls;
-	import com.kish.video.KVideoPlayer;
+package com.client.project.video.controls {
+	import kish.display.KSprite;
+	import kish.video.IVideoControls;
+	import kish.video.KVideoPlayer;
 
 	import flash.display.DisplayObjectContainer;
 
@@ -17,10 +16,9 @@ package com.client.project.video.controls
 		public function VideoControls( host:DisplayObjectContainer=null, init:Object=null )
 		{
 			super( host, init );
-			build();
 		}
 		
-		private function build():void
+		public function initialize():void
 		{
 			new PlayPauseButton( this, {y:-15, videoPlayer:_vid } );
 			new SeekBar( this, {x:15, y:-15, videoPlayer:_vid } );
@@ -28,10 +26,10 @@ package com.client.project.video.controls
 		}
 	}
 }
-import com.kish.control.button.KButton;
-import com.kish.display.Draw;
-import com.kish.display.KShape;
-import com.kish.video.KVideoPlayer;
+import kish.control.button.KButton;
+import kish.display.Draw;
+import kish.display.KShape;
+import kish.video.KVideoPlayer;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.GraphicsSolidFill;

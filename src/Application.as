@@ -4,11 +4,19 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-package
-{
+package {
+	import kish.core.IApplication;
+	import kish.core.view.AbstractView;
+	import kish.display.Draw;
+
 	import com.client.project.application.ApplicationController;
-	import com.kish.core.IApplication;
-	import com.kish.core.view.AbstractView;
+
+	import org.osflash.signals.Signal;
+
+	import flash.display.GraphicsSolidFill;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
 
 	/*
 	 * *
@@ -28,6 +36,12 @@ package
 		public static function get instance() : Application 
 		{ 
 			return _instance;
+		}
+		
+		private var _resetSignal:Signal = new Signal();
+		public function get resetSignal():Signal 
+		{
+			return _resetSignal;
 		}
 	
 		/**
@@ -50,7 +64,18 @@ package
 		public function start():void
 		{
 			trace( 'Application::start() ' );
-			new ApplicationController( stage, { view:this } ).initialize();
+			
+			var hit:Sprite = new Sprite();
+			Draw.rect(hit.graphics, new GraphicsSolidFill( 0xff00ff, 0 ), 0, 0, stage.stageWidth, stage.stageHeight );
+			addChild( hit );
+			hit.addEventListener( MouseEvent.CLICK, onClick );
+			
+			new ApplicationController( this ).initialize();
+		}
+		
+		private function onClick( e:Event ):void
+		{
+			_resetSignal.dispatch();
 		}
 	}
 }

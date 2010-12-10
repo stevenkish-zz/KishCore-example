@@ -1,6 +1,5 @@
-package com.client.project.video
-{
-	import com.kish.core.control.AbstractViewController;
+package com.client.project.video {
+	import kish.core.control.AbstractViewController;
 
 	import flash.display.DisplayObjectContainer;
 
@@ -9,9 +8,9 @@ package com.client.project.video
 		[View]
 		public var view:VideoView;
 		
-		public function VideoController( host:DisplayObjectContainer=null, init:Object=null )
+		public function VideoController( host:DisplayObjectContainer=null )
 		{
-			super( host, init );
+			super( null, host );
 		}		
 	}
 }

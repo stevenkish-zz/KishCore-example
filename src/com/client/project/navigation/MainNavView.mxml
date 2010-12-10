@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view:AbstractView 
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:mx="http://ns.adobe.com/mxml/2009" 
+	xmlns:display="flash.display.*"
+	xmlns:view="kish.core.view.*"
+	>
+	
+	<fx:Script>
+		<![CDATA[
+			import kish.display.Draw;
+			import kish.display.KSprite;
+
+			import com.client.project.animation.FadeIn;
+			import com.client.project.animation.FadeOut;
+		
+			[Reveal]
+			public var fadeIn:FadeIn;
+			
+			[Conceal]
+			public var fadeOut:FadeOut;
+			
+			private var _btnLayer:KSprite;
+				
+			override public function initialize():void
+			{
+				super.initialize();
+				Draw.rect( graphics, new GraphicsSolidFill( 0xf1f1f1 ), 0, 0, stage.stageWidth, 22 );
+			}
+
+			public function addButton( btn:MainNavButton ):MainNavButton
+			{
+				if( !_btnLayer ) 
+					_btnLayer = new KSprite( this );
+					
+				var space:int = _btnLayer.numChildren == 0 ? 0 : 25;
+				var xPos:int = space + _btnLayer.width;
+				
+				btn.x = xPos;
+				_btnLayer.addChild( btn );
+				_btnLayer.x = int(stage.stageWidth*.5)-int(_btnLayer.width*.5);
+				
+				return btn;
+			}
+		]]>
+	</fx:Script>
+	
+	<display:Shape id="background"/>
+	
+</view:AbstractView>

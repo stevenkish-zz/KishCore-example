@@ -1,7 +1,6 @@
-package com.client.project.animation
-{
+package com.client.project.animation {
 	import com.greensock.TweenLite;
-	import com.kish.animation.AbstractAnimation;
+	import kish.animation.AbstractAnimation;
 
 	import flash.display.DisplayObject;
 
@@ -14,6 +13,12 @@ package com.client.project.animation
 		public function FadeIn( target:DisplayObject )
 		{
 			super( target, .5 );
+		}
+		
+		override public function initialize() : void
+		{
+			target.alpha = 0;
+			target.visible = true;
 		}
 
 		override public function start() : void

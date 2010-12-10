@@ -1,6 +1,5 @@
-package com.client.project.section
-{
-	import com.kish.core.control.AbstractViewController;
+package com.client.project.section {
+	import kish.core.control.AbstractViewController;
 
 	import flash.display.DisplayObjectContainer;
 
@@ -9,9 +8,9 @@ package com.client.project.section
 		[View]
 		public var view:SectionView;
 		
-		public function SectionController( host:DisplayObjectContainer=null, init:Object=null )
+		public function SectionController( host:DisplayObjectContainer=null )
 		{
-			super( host, init );
+			super( null, host );
 		}
 	}
 }

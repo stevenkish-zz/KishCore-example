@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view:AbstractView
+	xmlns:view="kish.core.view.*"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:mx="http://ns.adobe.com/mxml/2009" 
+	xmlns:text="kish.text.*"
+	xmlns:display="flash.display.*"
+	>
+	
+	<fx:Script>
+		<![CDATA[
+			import kish.display.Draw;
+
+			import com.client.project.animation.FadeIn;
+			import com.client.project.animation.FadeOut;
+		
+			[Reveal]
+			public var fadeIn:FadeIn;
+		
+			[Conceal]
+			public var fadeOut:FadeOut;
+			
+			override public function initialize():void
+			{
+				super.initialize();
+
+				title.htmlText = String('<h1>').concat( controller.data.label ).concat('</h1>');
+				Draw.rect( graphics, new GraphicsSolidFill( controller.data.content ), title.x-2, title.y, title.textWidth+7, title.textHeight+4);
+			}
+		]]>
+	</fx:Script>
+	
+	<display:Shape id="background"/>
+	
+	<text:KText
+		id="title"
+		y="50" 
+		textColor="0xffffff"
+		/>
+
+</view:AbstractView>

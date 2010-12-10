@@ -1,16 +1,17 @@
-package com.client.project.application
-{
+package com.client.project.application {
+	import kish.core.control.AbstractViewController;
+	import kish.core.control.NavigationManager;
+	import kish.core.control.NavigationNodeTransitionController;
+	import kish.display.KSprite;
+	import kish.net.KURLLoader;
+	import kish.util.ClassUtil;
+
 	import com.client.project.navigation.MainNavController;
 	import com.client.project.section.SectionController;
 	import com.client.project.video.VideoController;
-	import com.kish.core.control.AbstractViewController;
-	import com.kish.core.control.NavigationManager;
-	import com.kish.core.control.NodeTransitionController;
-	import com.kish.display.KSprite;
-	import com.kish.net.KURLLoader;
-	import com.kish.util.ClassUtil;
 
-	import flash.display.DisplayObjectContainer;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
 
 	/**
 	 * @author stevenkish
@@ -21,9 +22,10 @@ package com.client.project.application
 		ClassUtil.register( SectionController );
 		ClassUtil.register( VideoController );
 		
-		public function ApplicationController(host : DisplayObjectContainer, props : Object = null) 
+		public function ApplicationController( view:Application ) 
 		{
-			super(host, props);
+			super( view );
+			view.resetSignal.add( resetResponse );
 		}
 		
 		override public function initialize():void
@@ -38,13 +40,18 @@ package com.client.project.application
 			NavigationManager.instance.mapNavigationData( data );
 			ApplicationInitializer.instance.initialize();
 		
-			new NodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
+			new NavigationNodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
 	//		new PerformanceMonitor( new KSprite( Application.instance ));
 			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
 			nav.initialize();
 			nav.show();
 
 			super.initialize();
+		}
+		
+		private function resetResponse():void
+		{
+			NavigationManager.instance.activeNode = null;
 		}
 	}
 }
