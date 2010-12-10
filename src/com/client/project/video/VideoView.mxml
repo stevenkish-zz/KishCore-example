@@ -36,17 +36,21 @@
 				title.htmlText = String('<h1>').concat( controller.data.label ).concat('</h1>');
 				Draw.rect( graphics, new GraphicsSolidFill( controller.data.content ), title.x-2, title.y, title.textWidth+7, title.textHeight+4);
 			}
-
+			
 			override protected function onRevealed():void
 			{
 				vid.start();	
 				super.onRevealed();
 			}
-
-			override public function hide():void
+			
+			override protected function onPreparedToCanceal():void
 			{
 				vid.pause();
-				vid.killStream();
+				super.onPreparedToCanceal();
+			}	
+			
+			override public function hide():void
+			{
 				super.hide();
 			}
 		]]>
