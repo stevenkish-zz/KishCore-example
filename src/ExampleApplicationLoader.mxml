@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kish:ApplicationLoader 
+	xmlns:kish="kish.*"
+	xmlns:mx="http://www.adobe.com/mxml/2009"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:loader="com.client.project.component.loader.*"
+	>
+
+	<fx:Metadata>
+		[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.greensock.TweenLite;
+			override protected function invalidateDisplayList():void
+			{
+				super.invalidateDisplayList();
+				
+				spinner.x = stage.stageWidth*.5;
+				spinner.y = stage.stageHeight*.5;
+				spinner.play();
+			}
+		
+			override protected function onApplicationLoadProgress(bytesLoaded : int, bytesTotal : int) : void 
+			{
+				trace('KishCoreLoader::onApplicationLoadProgress', bytesLoaded + '/' + bytesTotal);
+			}
+			
+			override protected function onApplicationLoadComplete():void
+			{
+				trace('KishCoreLoader::onApplicationLoadComplete');
+				spinner.stop();
+				TweenLite.to(spinner, .5, {alpha:0, onComplete:onHidden });
+			}
+			
+			private function onHidden():void
+			{
+				spinner.dispose();
+				removeChild(spinner);
+			}
+		]]>
+	</fx:Script>
+	
+	<loader:Spinner id="spinner"/>
+	
+</kish:ApplicationLoader>

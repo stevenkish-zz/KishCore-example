@@ -11,8 +11,7 @@
  * @author Matthew J Tretter <http://www.exanimo.com>
  * @author Piotr Zema <http://felixz.marknaegeli.com>
  */
-package com.asual
-{
+package com.asual {
 	import flash.events.Event;
 
 	/**

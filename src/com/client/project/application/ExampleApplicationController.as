@@ -1,0 +1,51 @@
+package com.client.project.application 
+{
+	import kish.Application;
+	import kish.ApplicationController;
+	import kish.control.NavigationManager;
+	import kish.control.NavigationNodeTransitionController;
+	import kish.display.KSprite;
+
+	import com.client.project.navigation.MainNavController;
+
+	import flash.utils.ByteArray;
+
+	/**
+	 * @author stevenkish
+	 */
+	public class ExampleApplicationController extends ApplicationController 
+	{
+		// embed xml
+		[Embed(source="/assets/xml/navigation.xml", mimeType="application/octet-stream")]
+		private const NavigationXML:Class;
+
+		public function ExampleApplicationController( application:Application ) 
+		{
+			super( application );
+		}
+
+		override public function initialize():void 
+		{
+			super.initialize();
+
+			var byteArray:ByteArray = new NavigationXML() as ByteArray;
+		    var navigationStr:String = byteArray.readUTFBytes( byteArray.length );
+			var navigationData:XML = XML( navigationStr );
+			
+			NavigationManager.instance.mapNavigationData( navigationData );
+			ApplicationInitializer.instance.initialize();
+		
+			new NavigationNodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
+			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
+			nav.initialize();
+			nav.show();
+
+			ExampleApplication( Application.instance ).goHomeSignal.add( resetResponse );
+		}
+		
+		private function resetResponse():void
+		{
+			NavigationManager.instance.activeNode = null;
+		}
+	}
+}

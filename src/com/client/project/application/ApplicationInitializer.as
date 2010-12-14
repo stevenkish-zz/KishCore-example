@@ -1,17 +1,18 @@
-package com.client.project.application {
+package com.client.project.application 
+{
 	import kish.Application;
 	import kish.net.FlashVars;
 	import kish.text.KText;
 
 	import com.greensock.TweenLite;
-	import com.greensock.easing.*;
+	import com.greensock.easing.Strong;
 
 	import flash.display.Stage;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.text.Font;
 	import flash.text.StyleSheet;
-	import flash.utils.*;
+	import flash.utils.ByteArray;
 
 	public class ApplicationInitializer 
 	{
@@ -53,7 +54,7 @@ package com.client.project.application {
 		{
 			var f:Array = Font.enumerateFonts();
 			for( var i:int = 0; i<f.length; i++) 
-				trace("AppInitializer::initialize()", f[i].fontName + '; ' + f[i].fontStyle );
+				trace("ApplicationInitializer::initialize() embedded font #"+(i+1)+":", f[i].fontName + '; ' + f[i].fontStyle );
 			
 			populateFlashVars( Application.instance.stage );
 			parseConfig();

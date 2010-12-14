@@ -11,8 +11,7 @@
  * @author Mark Ross <http://www.therossman.org>
  * @author Piotr Zema <http://felixz.marknaegeli.com>
  */
-package com.asual
-{
+package com.asual {
 	import flash.errors.IllegalOperationError;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;

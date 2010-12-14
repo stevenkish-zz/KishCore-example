@@ -1,5 +1,5 @@
 package com.client.project.video {
-	import kish.core.control.AbstractViewController;
+	import kish.control.AbstractViewController;
 
 	import flash.display.DisplayObjectContainer;
 

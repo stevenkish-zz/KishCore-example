@@ -14,14 +14,14 @@
 	</default-size>
 	<compiler>
 		<incremental>true</incremental>
-		<optimize>true</optimize>
+		<optimize>false</optimize>
 		<keep-generated-actionscript>false</keep-generated-actionscript>
 		<warn-no-constructor>false</warn-no-constructor>
 		<warn-no-explicit-super-call-in-constructor>false</warn-no-explicit-super-call-in-constructor>
 		<show-actionscript-warnings>false</show-actionscript-warnings>
 		<show-binding-warnings>true</show-binding-warnings>
 		<show-unused-type-selector-warnings>true</show-unused-type-selector-warnings>
-		<debug>true</debug>		
+		<debug>false</debug>		
 	</compiler>
 	<metadata>
 		<title>Kish Core Application Loader</title>

@@ -1,9 +1,9 @@
-package com.client.project.navigation
-{
-	import com.greensock.TweenLite;
-	import kish.control.button.KButton;
-	import kish.core.control.NavigationManager;
+package com.client.project.navigation {
+	import kish.component.button.KButton;
+	import kish.control.NavigationManager;
 	import kish.text.KText;
+
+	import com.greensock.TweenLite;
 
 	import flash.display.DisplayObjectContainer;
 

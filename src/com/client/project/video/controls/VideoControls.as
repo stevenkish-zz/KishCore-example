@@ -26,7 +26,7 @@ package com.client.project.video.controls {
 		}
 	}
 }
-import kish.control.button.KButton;
+import kish.component.button.KButton;
 import kish.display.Draw;
 import kish.display.KShape;
 import kish.video.KVideoPlayer;

@@ -1,7 +1,7 @@
-package com.client.project.animation
-{
-	import com.greensock.TweenLite;
+package com.client.project.animation {
 	import kish.animation.AbstractAnimation;
+
+	import com.greensock.TweenLite;
 
 	import flash.display.DisplayObject;
 

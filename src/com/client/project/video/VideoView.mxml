@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <view:AbstractView 
-	xmlns:view="kish.core.view.*"
+	xmlns:view="kish.view.*"
 	xmlns:fx="http://ns.adobe.com/mxml/2009"
-	xmlns:mx="http://ns.adobe.com/mxml/2006" 
+	xmlns:mx="http://ns.adobe.com/mxml/2009" 
 	xmlns:video="kish.video.*"
 	xmlns:controls="com.client.project.video.controls.*"
 	xmlns:text="kish.text.*"
@@ -43,16 +43,11 @@
 				super.onRevealed();
 			}
 			
-			override protected function onPreparedToCanceal():void
+			override protected function onPreparedToHide():void
 			{
 				vid.pause();
-				super.onPreparedToCanceal();
+				super.onPreparedToHide();
 			}	
-			
-			override public function hide():void
-			{
-				super.hide();
-			}
 		]]>
 	</fx:Script>
 	

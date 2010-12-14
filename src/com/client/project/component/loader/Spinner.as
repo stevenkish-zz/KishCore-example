@@ -1,16 +1,14 @@
-package com.client.project.component.loader
-{
-	import flash.text.TextFieldAutoSize;
-	import flash.display.MovieClip;
+package com.client.project.component.loader {
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.text.StyleSheet;
 	import flash.text.TextField;
+	import flash.text.TextFieldAutoSize;
 
 	/**
 	 * @author stevenkish
 	 */
-	public class Spinner extends MovieClip
+	public class Spinner extends Sprite
 	{
 		private const RADIUS:uint = 15;
 		private const NUMBER_OF_DOTS:uint = 12;
@@ -26,13 +24,12 @@ package com.client.project.component.loader
 		private var _label:String;
 		private var _rotationDegressPerFrame:Number;
 		
-		public function Spinner( label:String='LOADING...', rotationDegressPerFrame:Number=10 )
+		public function Spinner()
 		{
 			super();
-			super.stop();
 			
-			_label = label;
-			_rotationDegressPerFrame = rotationDegressPerFrame;
+			_label = 'LOADING...';
+			_rotationDegressPerFrame = 10;
 			
 			_spinner = new Sprite();
 			
@@ -52,6 +49,7 @@ package com.client.project.component.loader
 				_spinner.graphics.endFill();
 			}
 			
+			_spinner.cacheAsBitmap = true;
 			addChild( _spinner );
 			
 			var styleSheet:StyleSheet = new StyleSheet();
@@ -63,8 +61,6 @@ package com.client.project.component.loader
 			_txt.autoSize = TextFieldAutoSize.CENTER;
 			_setLabel();
 			addChild( _txt );
-			
-			play();
 		}
 		
 		private function _setLabel():void
@@ -79,15 +75,13 @@ package com.client.project.component.loader
 			_spinner.rotation += _rotationDegressPerFrame;
 		}
 		
-		override public function play():void
+		public function play():void
 		{
 			addEventListener( Event.ENTER_FRAME, _onEnterFrame );
-			super.play();
 		}
 		
-		override public function stop():void
+		public function stop():void
 		{
-			super.stop();
 			removeEventListener( Event.ENTER_FRAME, _onEnterFrame );
 		}
 		
@@ -95,6 +89,12 @@ package com.client.project.component.loader
 		{
 			_label = value;
 			_setLabel();
+		}
+		
+		public function dispose():void
+		{
+			while( this.numChildren > 0 )
+				removeChildAt(0);
 		}
 	}
 }
