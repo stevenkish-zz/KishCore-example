@@ -12,13 +12,20 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import com.greensock.TweenLite;
+			import com.client.project.component.loader.Spinner;
+			
+			private var spinner:Spinner;
+
 			override protected function invalidateDisplayList():void
 			{
 				super.invalidateDisplayList();
 				
+				// declaring children programmatically- not in mxml-
+				// will reduce the file size significantly
+				spinner = new Spinner();
 				spinner.x = stage.stageWidth*.5;
 				spinner.y = stage.stageHeight*.5;
+				addChild( spinner );
 				spinner.play();
 			}
 		
@@ -30,18 +37,11 @@
 			override protected function onApplicationLoadComplete():void
 			{
 				trace('KishCoreLoader::onApplicationLoadComplete');
-				spinner.stop();
-				TweenLite.to(spinner, .5, {alpha:0, onComplete:onHidden });
-			}
-			
-			private function onHidden():void
-			{
 				spinner.dispose();
 				removeChild(spinner);
 			}
+			
 		]]>
 	</fx:Script>
-	
-	<loader:Spinner id="spinner"/>
 	
 </kish:ApplicationLoader>
