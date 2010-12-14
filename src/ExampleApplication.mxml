@@ -37,10 +37,15 @@
 				return _goHomeSignal;
 			}
 			
+			override protected function invalidateDisplayList():void
+			{
+				super.invalidateDisplayList();
+				Draw.rect(goHome.graphics, new GraphicsSolidFill( 0xff00ff, 0 ), 0, 0, stage.stageWidth, stage.stageHeight );
+			}
+			
 			override public function initialize():void
 			{
 				super.initialize();
-				Draw.rect(goHome.graphics, new GraphicsSolidFill( 0xff00ff, 0 ), 0, 0, stage.stageWidth, stage.stageHeight );
 				goHome.addEventListener( MouseEvent.CLICK, onClick );
 			}
 
@@ -51,6 +56,6 @@
 		]]>
 	</fx:Script>
 	
-	<display:Sprite id="goHome" />
+	<display:Sprite id="goHome"/>
 	
 </kish:Application>
