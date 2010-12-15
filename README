@@ -14,7 +14,7 @@ Features:
 - OVP-based KVideoPlayer class
 
 To Compile:
-- target Flex SDK 4.1.0
+- target Flex SDK 4.1.0 ( only framework.swc and playerglobal.swc are needed )
 - target Flash Player 10.0.0
 
 To Run:
