@@ -5,14 +5,17 @@ title: Kish Core
 Kish Core is a lightweight ActionScript 3 framework designed for modularity and quick implementation.
 
 Features:
+- MXML use without the Flex framework
 - metadata dependency injection
-- fully recursive, xml-driven navigation system
-- modified MVC pattern: no centralized model, but controller/view pairs throughout
-- controller/view pair implementation to help manage initializing, revealing, concealing, disposal and stage orientation tasks for custom views
-- convenience classes such as Draw, KText, KURLLoader and KLoader
+- fully recursive, xml-driven navigation framework
+- strong OOP principles
+- controller/view pair implementation to help manage initializing, revealing, concealing and disposing of custom views
+- convenience classes such as Draw, KText, KButton etc
 - OVP-based KVideoPlayer class
-- SWF Address integration
 
 To Compile:
-- target Flash Player 10
-- use the Flex 3 SDK ( Flex 4 SDK doesn't support the font embedding procedures used here )
+- target Flex SDK 4.1.0
+- target Flash Player 10.0.0
+
+To Run:
+- recommended use is to browse to bin/index.html via localhost, but Flash player can also be used
