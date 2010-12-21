@@ -23,60 +23,6 @@
 		<prop key='content'><![CDATA[0x4b4b5b]]></prop>
 		<prop key='videoURL'><![CDATA[../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv]]></prop>
 
-		<!-- Subsections -->
-		<node friendly='1.a'>
-			<prop key='label'><![CDATA[Section 1.a]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-
-			<!-- Subsections -->
-			<node friendly='1.a.1'>
-				<prop key='label'><![CDATA[Section 1.a.1]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-			</node>
-
-			<node friendly='1.a.2'>
-				<prop key='label'><![CDATA[Section 1.a.2]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-			</node>			
-		</node>
-
-		<node friendly='1.b'>
-			<prop key='label'><![CDATA[Section 1.b]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-
-			<!-- Subsections -->
-			<node friendly='1.b.1'>
-				<prop key='label'><![CDATA[Section 1.b.1]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-
-				<!-- Subsections -->
-				<node friendly='1.b.1.a'>
-					<prop key='label'><![CDATA[Section 1.b.1.a]]></prop>
-					<prop key='content'><![CDATA[]]></prop>
-				</node>
-
-				<node friendly='1.b.1.b'>
-					<prop key='label'><![CDATA[Section 1.b.1.b]]></prop>
-					<prop key='content'><![CDATA[]]></prop>
-				</node>			
-			</node>
-
-			<node friendly='1.b.2'>
-				<prop key='label'><![CDATA[Section 1.b.2]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-			</node>
-		</node>
-
-		<node friendly='1.c'>
-			<prop key='label'><![CDATA[Section 1.c]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
-
-		<node friendly='1.d'>
-			<prop key='label'><![CDATA[Section 1.d]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
-
 	</node>
 
 
@@ -84,44 +30,6 @@
 
 		<prop key='label'><![CDATA[Section 1]]></prop>
 		<prop key='content'><![CDATA[0x4b5b4b]]></prop>
-
-		<!-- Subsections -->
-		<node friendly='2.a'>
-			<prop key='label'><![CDATA[Section 2.a]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
-
-		<node friendly='2.b'>
-			<prop key='label'><![CDATA[Section 2.b]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-
-			<!-- Subsections -->
-			<node friendly='2.b.1'  fullyQualifiedClassName='com.client.project.section::SectionController'>
-				<prop key='label'><![CDATA[Section 2.b.1]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-
-				<!-- Subsections -->
-				<node friendly='2.b.1.a'  fullyQualifiedClassName='com.client.project.section::SectionController'>
-					<prop key='label'><![CDATA[Section 2.b.1.a]]></prop>
-					<prop key='content'><![CDATA[]]></prop>
-				</node>
-			</node>
-
-			<node friendly='2.b.2' fullyQualifiedClassName='com.client.project.section::SectionController'>
-				<prop key='label'><![CDATA[Section 2.b.2]]></prop>
-				<prop key='content'><![CDATA[]]></prop>
-			</node>
-		</node>
-
-		<node friendly='2.c'>
-			<prop key='label'><![CDATA[Section 2.c]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
-
-		<node friendly='2.d'>
-			<prop key='label'><![CDATA[Section 2.d]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
 
 	</node>
 
@@ -131,26 +39,25 @@
 		<prop key='label'><![CDATA[Section 2]]></prop>
 		<prop key='content'><![CDATA[0x5b4b4b]]></prop>
 
-		<!-- Subsections -->
+		<!-- Subsections...
 		<node friendly='3.a'>
 			<prop key='label'><![CDATA[Section 3.a]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
+
+		        <node friendly='3.a.1'>
+			        <prop key='label'><![CDATA[Section 3.a.1]]></prop>
+
+		                <node friendly='3.a.1.a'>
+			                <prop key='label'><![CDATA[Section 3.a.1.a]]></prop>
+		                </node>
+		        </node>
 		</node>
 
 		<node friendly='3.b'>
 			<prop key='label'><![CDATA[Section 3.b]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
 		</node>
-
-		<node friendly='3.c'>
-			<prop key='label'><![CDATA[Section 3.c]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
-
-		<node friendly='3.d'>
-			<prop key='label'><![CDATA[Section 3.d]]></prop>
-			<prop key='content'><![CDATA[]]></prop>
-		</node>
+                -->
 
 	</node>
 
