@@ -6,8 +6,8 @@
 	
 	each node, including the root node, has exactly the same structure:
 	
-	friendly: a unique ID 
-	fullyQualifiedClassName: the full path of the AS3 class to instantiate once the node takes focus in the application
+	@friendly: a unique ID 
+	@fullyQualifiedClassName: the full path of the AS3 class to instantiate once the node takes focus in the application
 	<prop> represents any number of dynamic key/value pairs
 
 -->
