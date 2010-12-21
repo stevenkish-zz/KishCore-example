@@ -4,9 +4,6 @@
 
 	Recursive navigation data structure to be consumed by NavigationManager once loaded
 	
-	*For the purposes of the default KishCore project, children's children here are not being used,
-	but are meant to prove the recursive data traversal and mapping capabilities of the navigation framework
-	
 	each node, including the root node, has exactly the same structure:
 	
 	friendly: a unique ID 
@@ -15,6 +12,7 @@
 	<prop> represents any number of dynamic key/value pairs
 
 -->
+
 <node friendly='root'>
 
 	<node friendly='1' fullyQualifiedClassName='com.client.project.video::VideoController'>
