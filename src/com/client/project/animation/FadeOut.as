@@ -1,4 +1,5 @@
-package com.client.project.animation {
+package com.client.project.animation 
+{
 	import kish.animation.AbstractAnimation;
 
 	import com.greensock.TweenLite;
@@ -18,6 +19,7 @@ package com.client.project.animation {
 		
 		override public function start() : void
 		{
+			trace('FadeOut::start()');
 			TweenLite.to( target, duration, { alpha:0, onComplete:onComplete } );
 		}
 	}

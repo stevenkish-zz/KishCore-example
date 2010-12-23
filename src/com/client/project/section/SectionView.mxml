@@ -35,7 +35,7 @@
 			override protected function invalidateDisplayList():void
 			{
 				super.invalidateDisplayList();
-				Draw.rect( graphics, new GraphicsSolidFill( controller.data.content ), 0, title.y, stage.stageWidth, title.textHeight+4);
+				Draw.rect( background.graphics, new GraphicsSolidFill( controller.data.content ), 0, title.y, stage.stageWidth, title.textHeight+4);
 			}
 		]]>
 	</fx:Script>
