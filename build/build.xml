@@ -1,0 +1,50 @@
+<!--
+	Main ant build for KishCore-example project
+	update the build.properties file with values specific to your system
+-->
+
+<project name="KishCore" default="run" basedir="..">
+
+	<!-- inlclude property file	-->
+	<property file="${basedir}/build/build.properties" />
+		
+	<!-- point to flex ant tasks -->
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	<!-- compile loader SWF -->
+	<target name="compile-loader" description="compile the application loader SWF">
+		<echo>COMPILING LOADER...</echo>
+		<mxmlc file="${basedir}/src/ExampleApplicationLoader.mxml"
+			output="${basedir}/deploy/bin/ExampleApplicationLoader.swf">
+			<!-- inlcude SWC -->
+			<compiler.library-path dir="${basedir}/lib" append="true">
+				<include name="kishcore.swc"/>
+			</compiler.library-path>
+		</mxmlc>
+	</target>
+
+	<!-- compile application SWF -->
+	<target name="compile-application" description="compile the application SWF">
+		<echo>COMPILING APPLICATION...</echo>
+		<mxmlc file="${basedir}/src/ExampleApplication.mxml" 
+			output="${basedir}/deploy/bin/ExampleApplication.swf">
+			<!-- inlcude SWCs -->
+			<compiler.library-path dir="${basedir}/lib" append="true">
+				<include name="as3-signals-v0.7.swc"/>
+				<include name="greensock.swc"/>
+				<include name="kishcore.swc"/>
+				<include name="ovp_core.swc"/>
+			</compiler.library-path>
+		</mxmlc>
+	</target>
+
+	<!-- run deploy package in default browser -->
+	<target name="run" depends="compile-loader,compile-application" description="compile both the application, and application loader SWFs">
+		<echo>RUNNING APPLICATION...</echo>
+		<exec executable="open">
+			<arg value="${run.browser}" />
+			<arg value="${run.path}" />
+		</exec>
+	</target>
+
+</project>

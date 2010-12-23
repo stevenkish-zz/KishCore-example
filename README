@@ -1,6 +1,6 @@
 author: Steven Kish
 website: http://www.unstrukt.com
-title: Kish Core
+title: KishCore
 
 Kish Core is a lightweight ActionScript 3 framework designed for modularity and quick implementation.
 
@@ -8,14 +8,18 @@ Features:
 - MXML use without the Flex framework
 - metadata dependency injection
 - fully recursive, xml-driven navigation framework
-- strong OOP principles
+- strong OOP principles throughout
 - controller/view pair implementation to help manage initializing, revealing, concealing and disposing of custom views
 - convenience classes such as Draw, KText, KButton etc
-- OVP-based KVideoPlayer class
+- OVP-based KVideoPlayer class ( progressive )
 
-To Compile:
-- target Flex SDK 4.1.0 ( only framework.swc and playerglobal.swc are needed )
-- target Flash Player 10.0.0
+Prerequisites:
+1. have Ant installed
+2. download Flex 4.1 SDK ( must target Flex 4.1 or higher )
 
-To Run:
-- recommended use is to browse to bin/index.html via localhost, but Flash player can also be used
+Compile/Run Directions:
+1. open the file named "build.properties" in the "build" directory
+2. update the "FLEX_HOME" property to reflect the location of your Flex SDK ( must target Flex SDK 4.1 or higher )
+2. update the "run.browser" property to reflect the internet browser application you'd like to test with
+3. save "build.properties"
+4. With Ant, run the default routine of "build.xml" which is found in the "build" directory
