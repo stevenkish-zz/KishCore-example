@@ -17,7 +17,7 @@
       <optimize>true</optimize>
 
       <!-- Enable trace statement omission. -->
-      <omit-trace-statements>true</omit-trace-statements>
+      <omit-trace-statements>false</omit-trace-statements>
 
       <!-- Keep the following AS3 metadata in the bytecodes.                                             -->
       <!-- Warning: For the data binding feature in the Flex framework to work properly,                 -->
@@ -28,14 +28,14 @@
       <!--          4. NonCommittingChangeEvent                                                          -->
       <!--          5. Transient                                                                         -->
       <!--
+      -->
       <keep-as3-metadata>
-          <name>Bindable</name>
-          <name>Managed</name>
+          <name>Bindable</name><!--
+     	  <name>Managed</name>
           <name>ChangeEvent</name>
           <name>NonCommittingChangeEvent</name>
-          <name>Transient</name>
+          <name>Transient</name>-->
       </keep-as3-metadata>
-      -->
 
    </compiler>
 

@@ -19,22 +19,32 @@
 			[Conceal]
 			public var fadeOut:FadeOut;
 			
-			override public function initialize():void
-			{
-				super.initialize();
+			private var _label:String;
 
-				title.htmlText = String('<h1>').concat( controller.data.label ).concat('</h1>');
-				Draw.rect( graphics, new GraphicsSolidFill( controller.data.content ), title.x-2, title.y, title.textWidth+7, title.textHeight+4);
+			public function set label( value:String ):void
+			{
+				_label = value;
+			}
+
+			[Bindable]
+			public function get label():String
+			{
+				return String('<h1>').concat( _label ).concat('</h1>');
+			}
+
+			override protected function invalidateDisplayList():void
+			{
+				super.invalidateDisplayList();
+				Draw.rect( graphics, new GraphicsSolidFill( controller.data.content ), 0, title.y, stage.stageWidth, title.textHeight+4);
 			}
 		]]>
 	</fx:Script>
 	
 	<display:Shape id="background"/>
 	
-	<text:KText
-		id="title"
+	<text:KText id="title"
 		y="50" 
-		textColor="0xffffff"
-		/>
+		label="{label}"
+		textColor="0xffffff"/>
 
 </view:AbstractView>

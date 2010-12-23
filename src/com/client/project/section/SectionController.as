@@ -12,5 +12,11 @@ package com.client.project.section {
 		{
 			super( null, host );
 		}
+		
+		override public function initialize():void 
+		{
+			super.initialize();
+			view.label = data.label;
+		}
 	}
 }

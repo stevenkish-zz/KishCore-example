@@ -3,7 +3,7 @@
 	update the build.properties file with values specific to your system
 -->
 
-<project name="KishCore" default="run" basedir="..">
+<project name="KishCore" default="compile-all-and-run" basedir="..">
 
 	<!-- inlclude property file	-->
 	<property file="${basedir}/build/build.properties" />
@@ -39,12 +39,27 @@
 	</target>
 
 	<!-- run deploy package in default browser -->
-	<target name="run" depends="compile-loader,compile-application" description="compile both the application, and application loader SWFs">
+	<target name="run" description="compile both the application, and application loader SWFs">
 		<echo>RUNNING APPLICATION...</echo>
 		<exec executable="open">
 			<arg value="${run.browser}" />
 			<arg value="${run.path}" />
 		</exec>
 	</target>
+
+	<!-- compile application and run -->
+	<target name="compile-application-and-run" 
+		depends="compile-application,run" 
+		description="compile application and run"/>
+
+	<!-- compile application loader and run -->
+	<target name="compile-application-loader-and-run" 
+		depends="compile-loader,run" 
+		description="compile application loader and run"/>
+
+	<!-- compile all and run -->
+	<target name="compile-all-and-run" 
+		depends="compile-loader,compile-application,run" 
+		description="compile both the application, and application loader SWFs"/>
 
 </project>
