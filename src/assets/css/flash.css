@@ -1,6 +1,6 @@
 p
 {
-	color:#010000;
+	color:#ff00ff;
 	font-size:10px;
 	font-family:_Arial;
 	leading:1px;
@@ -9,11 +9,12 @@ p
 a:link
 {
 	color:#0000FF;
+	decoration:underline;
 }
 
 a:hover
 {
-	decoration:underline;
+	decoration:none;
 }
 
 a:active
@@ -31,4 +32,9 @@ h2
 {
 	font-size:13px;
 	font-family:_Arial;
+}
+
+.emphasized
+{
+	color:#00ffff;
 }

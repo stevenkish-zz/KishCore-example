@@ -1,5 +1,5 @@
 <kish:ApplicationLoader 
-	xmlns:kish="kish.*"
+	xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 	xmlns:loader="com.client.project.component.loader.*"

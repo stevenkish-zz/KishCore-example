@@ -3,7 +3,7 @@
 	update the build.properties file with values specific to your system
 -->
 
-<project name="KishCore" default="compile-all-and-run" basedir="..">
+<project name="KishCore-example" default="compile-all-and-run" basedir="..">
 
 	<!-- inlclude property file	-->
 	<property file="${basedir}/build/build.properties" />

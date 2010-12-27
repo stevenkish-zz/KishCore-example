@@ -1,9 +1,8 @@
-<kish:Application 
-	xmlns:kish="kish.*"
+<kish:Application 	
+	xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 	>
-	
 	<fx:Metadata>
 		[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
 	</fx:Metadata>
@@ -31,6 +30,11 @@
 			public var applicationController:ExampleApplicationController;
 			
 			private var _goHomeSignal:Signal = new Signal();
+	
+			override public function start():void
+			{
+				super.start();
+			}
 	
 			public function get goHomeSignal():Signal 
 			{

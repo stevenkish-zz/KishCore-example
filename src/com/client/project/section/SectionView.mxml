@@ -1,9 +1,8 @@
-<view:AbstractView
-	xmlns:view="kish.view.*"
+<kish:AbstractView
+	xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
-	xmlns:text="kish.text.*"
-	xmlns:display="flash.display.*"
+	xmlns:display="flash.display.*" 
 	>
 	
 	<fx:Script>
@@ -19,32 +18,24 @@
 			[Conceal]
 			public var fadeOut:FadeOut;
 			
-			private var _label:String;
-
-			public function set label( value:String ):void
-			{
-				_label = value;
-			}
-
 			[Bindable]
-			public function get label():String
-			{
-				return String('<h1>').concat( _label ).concat('</h1>');
-			}
+			public var label:String;
 
-			override protected function invalidateDisplayList():void
+			private function onChange( event:Event ):void
 			{
-				super.invalidateDisplayList();
-				Draw.rect( background.graphics, new GraphicsSolidFill( controller.data.content ), 0, title.y, stage.stageWidth, title.textHeight+4);
-			}
+				var fill:GraphicsSolidFill = new GraphicsSolidFill( controller.data.content );
+				Draw.rect( background.graphics, fill, title.x, title.y, title.textWidth+4, title.textHeight+4, true );
+			}	
 		]]>
 	</fx:Script>
 	
 	<display:Shape id="background"/>
 	
-	<text:KText id="title"
-		y="50" 
+	<kish:KText id="title"
 		label="{label}"
-		textColor="0xffffff"/>
+		tags="p,h1"
+		y="50" 
+		change="onChange(event)"
+		/>
 
-</view:AbstractView>
+</kish:AbstractView>

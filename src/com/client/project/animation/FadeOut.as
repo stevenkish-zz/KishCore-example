@@ -19,7 +19,6 @@ package com.client.project.animation
 		
 		override public function start() : void
 		{
-			trace('FadeOut::start()');
 			TweenLite.to( target, duration, { alpha:0, onComplete:onComplete } );
 		}
 	}

@@ -30,11 +30,11 @@
       <!--
       -->
       <keep-as3-metadata>
-          <name>Bindable</name><!--
+          <name>Bindable</name>
      	  <name>Managed</name>
           <name>ChangeEvent</name>
           <name>NonCommittingChangeEvent</name>
-          <name>Transient</name>-->
+          <name>Transient</name>
       </keep-as3-metadata>
 
       <!-- Turns on the display of stack traces for uncaught runtime errors. -->

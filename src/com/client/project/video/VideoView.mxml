@@ -1,11 +1,9 @@
-<view:AbstractView 
-	xmlns:view="kish.view.*"
+<kish:AbstractView 
+	xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
-	xmlns:video="kish.video.*"
 	xmlns:controls="com.client.project.video.controls.*"
-	xmlns:text="kish.text.*"
-	xmlns:display="flash.display.*"
+	xmlns:display="flash.display.*" 
 	>
 	
 	<fx:Script>
@@ -50,15 +48,15 @@
 		]]>
 	</fx:Script>
 	
-	<video:KVideoPlayer id="vid" autoStart="false" />
+	<kish:KVideoPlayer id="vid" autoStart="false" />
 	<controls:VideoControls id="controls" videoPlayer="{vid}"/>
 	
 	<display:Shape id="background"/>
 	
-	<text:KText
+	<kish:KText
 		id="title"
 		y="50" 
 		textColor="0xffffff"
 		/>
 
-</view:AbstractView>
+</kish:AbstractView>

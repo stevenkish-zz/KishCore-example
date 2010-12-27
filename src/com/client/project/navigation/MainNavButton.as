@@ -6,6 +6,7 @@ package com.client.project.navigation {
 	import com.greensock.TweenLite;
 
 	import flash.display.DisplayObjectContainer;
+	import flash.events.TextEvent;
 
 	/**
 	 * @author stevenkish
@@ -22,8 +23,18 @@ package com.client.project.navigation {
 		
 		private function build():void
 		{
-			_txt = new KText( this, { alpha:.5 } );
-			_txt.htmlText = String('<h2>').concat( _data.label ).concat('</h2>');
+			_txt = new KText( this );
+			_txt.addEventListener(TextEvent.LINK, onLink);
+			_txt.mouseEnabled = true;
+			_txt.selectable = true;
+			_txt.alpha = .5;
+			_txt.tags = "p,a@href=event:message";
+			_txt.label = _data.label;
+		}
+		
+		private function onLink( e:TextEvent ):void 
+		{
+			trace('onLink', e.text );
 		}
 		
 		override protected function click():void
@@ -45,13 +56,17 @@ package com.client.project.navigation {
 		
 		override protected function rollOver():void
 		{
-			if( !enabled ) return;
+			if( !enabled ) 
+				return;
+				
 			TweenLite.to( _txt, .5, { alpha:1 } );
 		}
 		
 		override protected function rollOut():void
 		{
-			if( !enabled ) return;
+			if( !enabled ) 
+				return;
+				
 			TweenLite.to( _txt, .5, { alpha:.5 } );
 		}
 	
