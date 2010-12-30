@@ -8,7 +8,6 @@
 	<fx:Script>
 		<![CDATA[
 			import kish.display.Draw;
-			import kish.display.KSprite;
 
 			import com.client.project.animation.FadeIn;
 			import com.client.project.animation.FadeOut;
@@ -19,27 +18,31 @@
 			[Conceal]
 			public var fadeOut:FadeOut;
 			
-			private var _btnLayer:KSprite;
-				
 			override public function initialize():void
 			{
 				super.initialize();
-				Draw.rect( graphics, new GraphicsSolidFill( 0xf1f1f1 ), 0, 0, stage.stageWidth, 22 );
+				Draw.rect( graphics, new GraphicsSolidFill( 0xf1f1f1 ), 0, 0, stage.stageWidth, 20 );
 			}
-
-			public function addButton( btn:MainNavButton ):MainNavButton
+			
+			override public function addChild( child:DisplayObject ):DisplayObject
 			{
-				if( !_btnLayer ) 
-					_btnLayer = new KSprite( this );
-					
-				var space:int = _btnLayer.numChildren == 0 ? 0 : 25;
-				var xPos:int = space + _btnLayer.width;
-				
-				btn.x = xPos;
-				_btnLayer.addChild( btn );
-				_btnLayer.x = int(stage.stageWidth*.5)-int(_btnLayer.width*.5);
-				
-				return btn;
+				var rtn:DisplayObject = super.addChild(child);
+				invalidate();	
+				return rtn;
+			}
+			
+			private function invalidate():void
+			{
+				var child:DisplayObject;
+				var prevChild:DisplayObject;
+				for( var i:uint = 0; i<numChildren; i++ )
+				{
+					child = getChildAt(i);
+					if ( prevChild )
+						child.x = prevChild.x + prevChild.width + 10;
+						
+					prevChild = child;
+				}
 			}
 		]]>
 	</fx:Script>

@@ -21,8 +21,10 @@
 			[Bindable]
 			public var label:String;
 
-			private function onChange( event:Event ):void
+			private function onChange(event : Event) : void 
 			{
+				event.stopPropagation();
+				event.stopImmediatePropagation();
 				var fill:GraphicsSolidFill = new GraphicsSolidFill( controller.data.content );
 				Draw.rect( background.graphics, fill, title.x, title.y, title.textWidth+4, title.textHeight+4, true );
 			}	
@@ -32,7 +34,7 @@
 	<display:Shape id="background"/>
 	
 	<kish:KText id="title"
-		label="{label}"
+		text="{label}"
 		tags="p,h1"
 		y="50" 
 		change="onChange(event)"

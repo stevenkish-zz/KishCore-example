@@ -1,7 +1,6 @@
 package com.client.project.navigation {
 	import kish.control.AbstractViewController;
 	import kish.control.NavigationManager;
-	import kish.model.NavigationNode;
 	import kish.model.Node;
 
 	import flash.display.DisplayObjectContainer;
@@ -12,10 +11,8 @@ package com.client.project.navigation {
 	public class MainNavController extends AbstractViewController 
 	{
 		[View]
-		public var mainNavView:MainNavView;
+		public var view:MainNavView;
 		
-		private var _btns : Vector.<MainNavButton>;
-
 		public function MainNavController( host:DisplayObjectContainer ) 
 		{
 			super( null, host );
@@ -25,20 +22,14 @@ package com.client.project.navigation {
 		{
 			super.initialize();
 			
-			_btns = new Vector.<MainNavButton>();
-			
 			// create buttons
-			for each( var node:Node in NavigationManager.instance.rootNode.children )
-				_btns.push( mainNavView.addButton( new MainNavButton( null, { data:node as NavigationNode } ) ) );
-				
-			NavigationManager.instance.activeNodeSignal.add( activeNodeResponse );
+			var childNodes:Vector.<Node> = NavigationManager.instance.rootNode.children;
+			for each( var node:Node in childNodes )
+			{
+				var btn:MainNavButton = new MainNavButton( view );
+				btn.data = node;
+				btn.initialize();
+			}
 		}	
-		
-		private function activeNodeResponse( node:NavigationNode ):void
-		{
-			
-			for each( var btn:MainNavButton in _btns )
-				btn.selected = !node || node.friendly == null ? false : btn.data.friendly == node.friendly;
-		}
 	}
 }

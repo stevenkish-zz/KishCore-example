@@ -19,7 +19,7 @@
 			{
 				super.invalidateDisplayList();
 				
-				// declaring children programmatically- not in mxml-
+				// declaring children programmatically and not in mxml
 				// will reduce the file size significantly
 				spinner = new Spinner();
 				spinner.x = stage.stageWidth*.5;

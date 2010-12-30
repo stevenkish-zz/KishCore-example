@@ -1,74 +1,40 @@
-package com.client.project.navigation {
-	import kish.component.button.KButton;
+package com.client.project.navigation 
+{
+	import kish.control.AbstractInteractiveController;
 	import kish.control.NavigationManager;
-	import kish.text.KText;
-
-	import com.greensock.TweenLite;
+	import kish.model.NavigationNode;
 
 	import flash.display.DisplayObjectContainer;
-	import flash.events.TextEvent;
 
 	/**
 	 * @author stevenkish
 	 */
-	public class MainNavButton extends KButton 
+	public class MainNavButton extends AbstractInteractiveController 
 	{
-		private var _txt:KText;
+		[View]
+		public var view:MainNavButtonSkin;
 		
-		public function MainNavButton( host:DisplayObjectContainer=null, init:Object=null )
+		public function MainNavButton( host:DisplayObjectContainer ) 
 		{
-			super( host, init );
-			build();
+			super( null, host );
 		}
 		
-		private function build():void
+		override public function initialize():void
 		{
-			_txt = new KText( this );
-			_txt.addEventListener(TextEvent.LINK, onLink);
-			_txt.mouseEnabled = true;
-			_txt.selectable = true;
-			_txt.alpha = .5;
-			_txt.tags = "p,a@href=event:message";
-			_txt.label = _data.label;
-		}
-		
-		private function onLink( e:TextEvent ):void 
-		{
-			trace('onLink', e.text );
+			super.initialize();
+			NavigationManager.instance.activeNodeSignal.add( activeNodeResponse );
+			view.label.text = data.label;
 		}
 		
 		override protected function click():void
 		{
-			NavigationManager.instance.activeNode = _data;
+			NavigationManager.instance.activeNode = data as NavigationNode;
 		}
 		
-		override protected function setSelected():void
+		private function activeNodeResponse( node:NavigationNode ):void
 		{
-			rollOver();
-			enabled = false;
-		}
-		
-		override protected function setUnselected():void
-		{
-			enabled = true;
-			rollOut();
-		}
-		
-		override protected function rollOver():void
-		{
-			if( !enabled ) 
-				return;
-				
-			TweenLite.to( _txt, .5, { alpha:1 } );
-		}
-		
-		override protected function rollOut():void
-		{
-			if( !enabled ) 
-				return;
-				
-			TweenLite.to( _txt, .5, { alpha:.5 } );
-		}
-	
+			enabled = NavigationNode( data ).id != node.id;
+			selected = NavigationNode( data ).id == node.id;
+		}		
 	}
 }

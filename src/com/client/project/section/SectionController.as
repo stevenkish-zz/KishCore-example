@@ -1,4 +1,5 @@
-package com.client.project.section {
+package com.client.project.section 
+{
 	import kish.control.AbstractViewController;
 
 	import flash.display.DisplayObjectContainer;
