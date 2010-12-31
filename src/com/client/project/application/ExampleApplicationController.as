@@ -33,7 +33,6 @@ package com.client.project.application
 			var navigationData:XML = XML( navigationStr );
 			
 			NavigationManager.instance.mapNavigationData( navigationData );
-			ApplicationInitializer.instance.initialize();
 		
 			new NavigationNodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
 			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );

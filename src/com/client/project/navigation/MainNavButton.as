@@ -33,8 +33,20 @@ package com.client.project.navigation
 		
 		private function activeNodeResponse( node:NavigationNode ):void
 		{
+			if( !node )
+			{
+				enabled = true;
+				selected = false;
+				return;
+			}
+			
 			enabled = NavigationNode( data ).id != node.id;
 			selected = NavigationNode( data ).id == node.id;
 		}		
+		
+		override public function set selected( value:Boolean ):void
+		{
+			super.selected = view.selected = value;
+		}
 	}
 }

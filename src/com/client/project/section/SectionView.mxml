@@ -36,7 +36,7 @@
 	<kish:KText id="title"
 		text="{label}"
 		tags="p,h1"
-		y="50" 
+		y="60" 
 		change="onChange(event)"
 		/>
 

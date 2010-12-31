@@ -55,7 +55,7 @@
 	
 	<kish:KText
 		id="title"
-		y="50" 
+		y="60" 
 		textColor="0xffffff"
 		/>
 
