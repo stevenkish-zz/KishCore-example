@@ -14,16 +14,7 @@
 
 <node friendly='root'>
 
-	<node friendly='1' fullyQualifiedClassName='com.client.project.video::VideoController'>
-
-		<prop key='label'><![CDATA[Video Player]]></prop>
-		<prop key='content'><![CDATA[0x4b4b5b]]></prop>
-		<prop key='videoURL'><![CDATA[../flv/AT&T_Gretchen_Bleiler_768_FLV-matt.flv]]></prop>
-
-	</node>
-
-
-	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
+	<node friendly='1' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
 		<prop key='label'><![CDATA[Section 1]]></prop>
 		<prop key='content'><![CDATA[0x4b5b4b]]></prop>
@@ -31,30 +22,30 @@
 	</node>
 
 
-	<node friendly='3' fullyQualifiedClassName='com.client.project.section::SectionController'>
+	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
 		<prop key='label'><![CDATA[Section 2]]></prop>
 		<prop key='content'><![CDATA[0x5b4b4b]]></prop>
 
 		<!-- Subsections...
-		<node friendly='3.a'>
-			<prop key='label'><![CDATA[Section 3.a]]></prop>
+		<node friendly='2.a'>
+			<prop key='label'><![CDATA[Section 2.a]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
 
-		        <node friendly='3.a.1'>
-			        <prop key='label'><![CDATA[Section 3.a.1]]></prop>
+		        <node friendly='2.a.1'>
+			        <prop key='label'><![CDATA[Section 2.a.1]]></prop>
 
-		                <node friendly='3.a.1.a'>
-			                <prop key='label'><![CDATA[Section 3.a.1.a]]></prop>
+		                <node friendly='2.a.1.a'>
+			                <prop key='label'><![CDATA[Section 2.a.1.a]]></prop>
 		                </node>
 		        </node>
 		</node>
 
-		<node friendly='3.b'>
-			<prop key='label'><![CDATA[Section 3.b]]></prop>
+		<node friendly='2.b'>
+			<prop key='label'><![CDATA[Section 2.b]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
 		</node>
-                -->
+		-->
 
 	</node>
 

@@ -7,8 +7,6 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import kish.display.Draw;
-
 			import com.client.project.animation.FadeIn;
 			import com.client.project.animation.FadeOut;
 		
@@ -21,7 +19,10 @@
 			override public function initialize():void
 			{
 				super.initialize();
-				Draw.rect( graphics, new GraphicsSolidFill( 0xf1f1f1 ), 0, 0, stage.stageWidth, 20 );
+				
+				graphics.beginFill(0xf1f1f1);
+				graphics.drawRect( 0, 0, stage.stageWidth, 20);
+				graphics.endFill();
 			}
 			
 			override public function addChild( child:DisplayObject ):DisplayObject

@@ -14,14 +14,12 @@
 
 			import com.client.project.application.ExampleApplicationController;
 			import com.client.project.section.SectionController;
-			import com.client.project.video.VideoController;
 			import com.greensock.TweenLite;
 			import com.greensock.easing.Strong;
 
 			import org.osflash.signals.Signal;
 			
 			ClassUtil.register(SectionController);
-			ClassUtil.register(VideoController);
 			
 			// embed css
 			[Embed(source="/assets/css/flash.css", mimeType="application/octet-stream")]

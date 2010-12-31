@@ -4,7 +4,6 @@ package com.client.project.application
 	import kish.ApplicationController;
 	import kish.control.NavigationManager;
 	import kish.control.NavigationNodeTransitionController;
-	import kish.display.KSprite;
 
 	import com.client.project.navigation.MainNavController;
 
@@ -34,8 +33,8 @@ package com.client.project.application
 			
 			NavigationManager.instance.mapNavigationData( navigationData );
 		
-			new NavigationNodeTransitionController( NavigationManager.instance.rootNode.children, new KSprite( Application.instance ) ).initialize();
-			var nav:MainNavController = new MainNavController( new KSprite( Application.instance ) );
+			new NavigationNodeTransitionController( NavigationManager.instance.rootNode.children, Application.instance ).initialize();
+			var nav:MainNavController = new MainNavController( Application.instance );
 			nav.initialize();
 			nav.show();
 

@@ -7,8 +7,6 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import kish.display.Draw;
-
 			import com.client.project.animation.FadeIn;
 			import com.client.project.animation.FadeOut;
 		
@@ -25,13 +23,14 @@
 			{
 				event.stopPropagation();
 				event.stopImmediatePropagation();
-				var fill:GraphicsSolidFill = new GraphicsSolidFill( controller.data.content );
-				Draw.rect( background.graphics, fill, title.x, title.y, title.textWidth+4, title.textHeight+4, true );
+				
+				graphics.clear();
+				graphics.beginFill( controller.data.content );
+				graphics.drawRect( title.x, title.y, title.textWidth+4, title.textHeight+4 );
+				graphics.endFill();
 			}	
 		]]>
 	</fx:Script>
-	
-	<display:Shape id="background"/>
 	
 	<kish:KText id="title"
 		text="{label}"
