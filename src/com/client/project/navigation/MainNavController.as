@@ -1,7 +1,7 @@
 package com.client.project.navigation {
 	import kish.control.AbstractViewController;
-	import kish.control.NavigationManager;
 	import kish.model.Node;
+	import kish.navigation.NavigationManager;
 
 	import flash.display.DisplayObjectContainer;
 
