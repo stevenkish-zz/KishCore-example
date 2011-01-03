@@ -6,7 +6,7 @@
 	>
 
 	<fx:Metadata>
-		[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
+		[SWF(backgroundColor="#FFFFFF", frameRate="46", width="320", height="480")]
 	</fx:Metadata>
 	
 	<fx:Script>

@@ -5,11 +5,12 @@
 	>
 	
 	<fx:Metadata>
-		[SWF(backgroundColor="#FFFFFF", frameRate="40", width="320", height="480")]
+		[SWF(backgroundColor="#FFFFFF", frameRate="46", width="320", height="480")]
 	</fx:Metadata>
 	
 	<fx:Script>
 		<![CDATA[
+			import kish.filter.BlackHoleFilter;
 			import kish.util.ClassUtil;
 
 			import com.client.project.application.ExampleApplicationController;
@@ -18,17 +19,23 @@
 			import com.greensock.easing.Strong;
 
 			import org.osflash.signals.Signal;
+
+			import flash.filters.ShaderFilter;
 			
 			ClassUtil.register(SectionController);
 			
 			// embed css
 			[Embed(source="/assets/css/flash.css", mimeType="application/octet-stream")]
-			private const FlashCSS:Class;
+			private const ThemeCSS:Class;
 
 			// embed fonts embedAsCFF="false"
 			[Embed(source='/assets/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', embedAsCFF="false", unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
 			public var _Arial:Class;
-
+			
+			//The image to display the filter on 
+			[Embed(source="/assets/jpg/davinci.jpg")] 
+			private var TestImage:Class;
+			
 			[Controller]
 			/*
 			 * Although, typically with KishCore, a subclass of AbstractViewController is responsible for instantiating it's own view,
@@ -39,48 +46,36 @@
 			
 			public var goHomeSignal:Signal = new Signal();
 			
-			/**
-			 * 
-			 */
-			override public function start():void
+			override public function initialize():void
 			{
-				trace("ExampleApplication::start()" );
-				initTweenLite();
-				super.start();
-			}
+				super.theme = ThemeCSS;
+				super.initialize();
+			}	
 	
-			/**
-			 *
-			 */  
-			override protected function parseStyleSheet( StyleClass:Class=null ):void
-			{
-				super.parseStyleSheet( FlashCSS );
-			}
-
-			/**
-			 * 
-			 */  
-			private function initTweenLite():void
-			{
-				//properties set here are permanent in the SWF, so this line only needs to be run once.
-				TweenLite.defaultEase = Strong.easeOut;
-				/*
-				TweenPlugin.activate([BlurFilterPlugin]);
-				TweenPlugin.activate([ColorMatrixFilterPlugin]);
-				TweenPlugin.activate([TintPlugin]);
-				TweenPlugin.activate([BezierPlugin]);
-				TweenPlugin.activate([VisiblePlugin]);
-				TweenPlugin.activate([GlowFilterPlugin]);
-				*/
-			}
-			
-			/**
-			 * 
-			 */
 			private function onLink( e:TextEvent ):void
 			{
 				goHomeSignal.dispatch();
 			}
+
+			private function onTestFilter( e:TextEvent ):void
+			{
+				var img:Bitmap = new TestImage() as Bitmap;
+				img.x = 10;
+				img.y = 70;
+				addChild(img);
+				
+				var blackHoleFilter:BlackHoleFilter = new BlackHoleFilter();
+				blackHoleFilter.height = img.height;
+				blackHoleFilter.horizontal = img.width*.5;
+				
+				TweenLite.to( blackHoleFilter, 2, { delay:.5, force:5, progress:1, onUpdate:onUpdate, onUpdateParams:[img,blackHoleFilter], ease:Strong.easeIn});
+				TweenLite.to( img, 2, { delay:.5, y:"+50", ease:Strong.easeIn});
+			}	
+			
+			private function onUpdate( image:Bitmap, filter:ShaderFilter ):void
+			{
+				image.filters = [filter];
+			}	
 		]]>
 	</fx:Script>
 	
@@ -94,5 +89,11 @@
 		y="40" 
 		tags="p,a@href=https://github.com/stevenkish/kishcore-example@target=_blank" 
 		text="KishCore on Github"/>
+		
+	<kish:KText 
+		x="50" y="25" 
+		tags="p,a@href=event:" 
+		text="Text Black Hole Filter"
+		link="onTestFilter(event)"/>
 		
 </kish:Application>

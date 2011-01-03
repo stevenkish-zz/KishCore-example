@@ -28,7 +28,6 @@
       <!--          4. NonCommittingChangeEvent                                                          -->
       <!--          5. Transient                                                                         -->
       <!--
-      -->
       <keep-as3-metadata>
           <name>Bindable</name>
      	  <name>Managed</name>
@@ -36,6 +35,7 @@
           <name>NonCommittingChangeEvent</name>
           <name>Transient</name>
       </keep-as3-metadata>
+      -->
 
       <!-- Turns on the display of stack traces for uncaught runtime errors. -->
       <verbose-stacktraces>false</verbose-stacktraces>
