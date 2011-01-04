@@ -68,7 +68,7 @@
 				blackHoleFilter.height = img.height;
 				blackHoleFilter.horizontal = img.width*.5;
 				
-				TweenLite.to( blackHoleFilter, 2, { delay:.5, force:5, progress:1, onUpdate:onUpdate, onUpdateParams:[img,blackHoleFilter], ease:Strong.easeIn});
+				TweenLite.to( blackHoleFilter, 2, { delay:.5, force:5, progress:1, horizontal:img.width, onUpdate:onUpdate, onUpdateParams:[img,blackHoleFilter], ease:Strong.easeIn});
 				TweenLite.to( img, 2, { delay:.5, y:"+50", ease:Strong.easeIn});
 			}	
 			
