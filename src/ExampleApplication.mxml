@@ -10,31 +10,12 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import kish.filter.BlackHoleFilter;
 			import kish.util.ClassUtil;
 
 			import com.client.project.application.ExampleApplicationController;
 			import com.client.project.section.SectionController;
-			import com.greensock.TweenLite;
-			import com.greensock.easing.Strong;
-
-			import org.osflash.signals.Signal;
-
-			import flash.filters.ShaderFilter;
 			
 			ClassUtil.register(SectionController);
-			
-			// embed css
-			[Embed(source="/assets/css/flash.css", mimeType="application/octet-stream")]
-			private const ThemeCSS:Class;
-
-			// embed fonts embedAsCFF="false"
-			[Embed(source='/assets/ttf/Arial.ttf', mimeType="application/x-font", fontName='_Arial', embedAsCFF="false", unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E')]
-			public var _Arial:Class;
-			
-			//The image to display the filter on 
-			[Embed(source="/assets/jpg/davinci.jpg")] 
-			private var TestImage:Class;
 			
 			[Controller]
 			/*
@@ -44,56 +25,20 @@
 			 */
 			public var applicationController:ExampleApplicationController;
 			
-			public var goHomeSignal:Signal = new Signal();
+			public var enabled:Boolean;
 			
-			override public function initialize():void
-			{
-				super.theme = ThemeCSS;
-				super.initialize();
-			}	
-	
-			private function onLink( e:TextEvent ):void
-			{
-				goHomeSignal.dispatch();
-			}
-
-			private function onTestFilter( e:TextEvent ):void
-			{
-				var img:Bitmap = new TestImage() as Bitmap;
-				img.x = 10;
-				img.y = 70;
-				addChild(img);
-				
-				var blackHoleFilter:BlackHoleFilter = new BlackHoleFilter();
-				blackHoleFilter.height = img.height;
-				blackHoleFilter.horizontal = img.width*.5;
-				
-				TweenLite.to( blackHoleFilter, 2, { delay:.5, force:5, progress:1, horizontal:img.width, onUpdate:onUpdate, onUpdateParams:[img,blackHoleFilter], ease:Strong.easeIn});
-				TweenLite.to( img, 2, { delay:.5, y:"+50", ease:Strong.easeIn});
-			}	
-			
-			private function onUpdate( image:Bitmap, filter:ShaderFilter ):void
-			{
-				image.filters = [filter];
-			}	
 		]]>
 	</fx:Script>
 	
-	<kish:KText
-		y="25" 
-		tags="p,a@href=event:" 
-		text="HOME" 
-		link="onLink(event)"/>
-	
 	<kish:KText 
-		y="40" 
+		y="460" x="210"
 		tags="p,a@href=https://github.com/stevenkish/kishcore-example@target=_blank" 
 		text="KishCore on Github"/>
 		
-	<kish:KText 
-		x="50" y="25" 
+	<kish:KText
+		y="460" x="10"
 		tags="p,a@href=event:" 
-		text="Text Black Hole Filter"
-		link="onTestFilter(event)"/>
+		text="Read Overview" 
+		link="{ if( enabled ) ExampleApplicationController( controller ).showOverviewClicked(); }"/>
 		
 </kish:Application>

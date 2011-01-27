@@ -6,13 +6,17 @@
 	
 	<fx:Script>
 		<![CDATA[
+			
+			[Bindable]
+			public var label:String;
+		
 			public function set selected( value:Boolean ):void
 			{
-				label.tags = value ? 'p,h2,span@class=emphasized' : 'p,h2';
+				labelText.tags = value ? 'p,h2,span@class=emphasized' : 'p,h2';
 			}
 		]]>
 	</fx:Script>
 	
-	<kish:KText id="label"/>
+	<kish:KText id="labelText" text="{label}"/>
 	
 </kish:AbstractView>

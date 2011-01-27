@@ -1,4 +1,5 @@
-package com.client.project.navigation {
+package com.client.project.navigation 
+{
 	import kish.control.AbstractViewController;
 	import kish.model.Node;
 	import kish.navigation.NavigationManager;
@@ -11,24 +12,25 @@ package com.client.project.navigation {
 	public class MainNavController extends AbstractViewController 
 	{
 		[View]
-		public var view:MainNavView;
+		public var mainNavView:MainNavView;
 		
 		public function MainNavController( host:DisplayObjectContainer ) 
 		{
 			super( null, host );
 		}
 		
-		override public function initialize():void 
+		override public function show():void 
 		{
-			super.initialize();
+			super.show();
 			
 			// create buttons
 			var childNodes:Vector.<Node> = NavigationManager.instance.rootNode.children;
 			for each( var node:Node in childNodes )
 			{
-				var btn:MainNavButton = new MainNavButton( view );
+				var btn:MainNavButton = new MainNavButton( mainNavView );
 				btn.data = node;
 				btn.initialize();
+				btn.show();
 			}
 		}	
 	}

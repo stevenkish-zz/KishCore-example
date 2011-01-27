@@ -2,8 +2,7 @@
 	xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
-	xmlns:display="flash.display.*" 
-	>
+	xmlns:display="flash.display.*">
 	
 	<fx:Script>
 		<![CDATA[
@@ -17,7 +16,10 @@
 			public var fadeOut:FadeOut;
 			
 			[Bindable]
-			public var label:String;
+			public var title:String;
+
+			[Bindable]
+			public var content:String;
 
 			private function onChange(event : Event) : void 
 			{
@@ -25,18 +27,26 @@
 				event.stopImmediatePropagation();
 				
 				graphics.clear();
-				graphics.beginFill( controller.data.content );
-				graphics.drawRect( title.x, title.y, title.textWidth+4, title.textHeight+4 );
+				graphics.beginFill( 0x4b5b4b );
+				graphics.drawRect( titleText.x, titleText.y, titleText.textWidth+4, titleText.textHeight+4 );
 				graphics.endFill();
 			}	
 		]]>
 	</fx:Script>
 	
-	<kish:KText id="title"
-		text="{label}"
+	<kish:KText id="titleText"
+		text="{title}"
 		tags="p,h1"
 		y="60" 
 		change="onChange(event)"
+		/>
+		
+	<kish:KText id="bodyText"
+		text="{content}"
+		tags="p"
+		wordWrap="true"
+		y="110" x="10"
+		width="300" height="300"
 		/>
 
 </kish:AbstractView>

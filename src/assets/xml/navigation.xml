@@ -2,9 +2,9 @@
 
 <!--
 
-	Recursive navigation data structure to be consumed by NavigationManager once loaded
+	Fully Recursive navigation data structure to be consumed by NavigationManager once loaded 
 	
-	each node, including the root node, has exactly the same structure:
+	Each node- including the root node- has exactly the same structure:
 	
 	@friendly: a unique ID 
 	@fullyQualifiedClassName: the full path of the AS3 class to instantiate once the node takes focus in the application
@@ -14,39 +14,57 @@
 
 <node friendly='root'>
 
+	<prop key='title'><![CDATA[KishCore Overview]]></prop>
+	<prop key='content'><![CDATA[KishCore framework is a lightweight ActionScript 3 framework built for modularity and easy implementation. With full use of declarative programming and mxml, KishCore takes on none of the weight of the full Flex framework. This application is a minimalistic example usage of KishCore and is primarily to provide a starting point for developers wishing to build an app with KishCore.
+
+Click anywhere to continue.]]></prop>
+	
 	<node friendly='1' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop key='label'><![CDATA[Section 1]]></prop>
-		<prop key='content'><![CDATA[0x4b5b4b]]></prop>
+		<prop key='title'><![CDATA[Section 1]]></prop>
+		<prop key='content'><![CDATA[Welcome, to Section 1, an instance of AbstractView. All content you see here is defined in navigation.xml and directed through NavigationManager and AbstractViewController.
+
+Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh.]]></prop>
 
 	</node>
 
-
 	<node friendly='2' fullyQualifiedClassName='com.client.project.section::SectionController'>
 
-		<prop key='label'><![CDATA[Section 2]]></prop>
-		<prop key='content'><![CDATA[0x5b4b4b]]></prop>
+		<prop key='title'><![CDATA[Section 2]]></prop>
+		<prop key='content'><![CDATA[Welcome, to Section 2, an instance of AbstractView. All content you see here is defined in navigation.xml and directed through NavigationManager and AbstractViewController.
+
+Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh.]]></prop>
 
 		<!-- Subsections...
 		<node friendly='2.a'>
-			<prop key='label'><![CDATA[Section 2.a]]></prop>
+			<prop key='title'><![CDATA[Section 2.a]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
 
 		        <node friendly='2.a.1'>
-			        <prop key='label'><![CDATA[Section 2.a.1]]></prop>
+			        <prop key='title'><![CDATA[Section 2.a.1]]></prop>
 
 		                <node friendly='2.a.1.a'>
-			                <prop key='label'><![CDATA[Section 2.a.1.a]]></prop>
+			                <prop key='title'><![CDATA[Section 2.a.1.a]]></prop>
 		                </node>
 		        </node>
 		</node>
 
 		<node friendly='2.b'>
-			<prop key='label'><![CDATA[Section 2.b]]></prop>
+			<prop key='title'><![CDATA[Section 2.b]]></prop>
 			<prop key='content'><![CDATA[]]></prop>
 		</node>
 		-->
 
 	</node>
+
+	<node friendly='3' fullyQualifiedClassName='com.client.project.section::SectionController'>
+
+		<prop key='title'><![CDATA[Section 3]]></prop>
+		<prop key='content'><![CDATA[Welcome, to Section 3, an instance of AbstractView. All content you see here is defined in navigation.xml and directed through NavigationManager and AbstractViewController.
+
+Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh. Lorum ipsum dit solar con amet faselus par ilumet. Cor di lorum sepselum for il naioh.]]></prop>
+
+	</node>
+
 
 </node>

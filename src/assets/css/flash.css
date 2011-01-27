@@ -1,7 +1,7 @@
 p
 {
 	color:#2b2b2b;
-	font-size:10px;
+	font-size:11px;
 	font-family:_Arial;
 	leading:1px;
 }
@@ -38,4 +38,9 @@ h2
 .emphasized
 {
 	color:#fb000b;
+}
+
+.white
+{
+	color:#ffffff;
 }

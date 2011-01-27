@@ -7,7 +7,7 @@ package com.client.project.section
 	public class SectionController extends AbstractViewController
 	{
 		[View]
-		public var view:SectionView;
+		public var sectionView:SectionView;
 		
 		public function SectionController( host:DisplayObjectContainer=null )
 		{
@@ -17,7 +17,8 @@ package com.client.project.section
 		override public function initialize():void 
 		{
 			super.initialize();
-			view.label = data.label;
+			sectionView.title = data.title;
+			sectionView.content = data.content;
 		}
 	}
 }

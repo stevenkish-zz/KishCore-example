@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kish:AbstractView 
+	xmlns:kish="library://www.unstukt.com/kishcore"
+	xmlns:mx="library://ns.adobe.com/flex/mx" 
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.client.project.animation.GenieIn;
+			import com.client.project.animation.GenieOut;
+		
+			[Reveal]
+			public var genieIn:GenieIn;
+		
+			[Conceal]
+			public var genieOut:GenieOut;
+			
+			[Bindable]
+			public var title:String;
+
+			[Bindable]
+			public var content:String;
+			
+			override public function show():void
+			{
+				graphics.clear();
+				graphics.beginFill( 0x1a1a1a, .95 );
+				graphics.drawRect( 0, 0, 320, 480 );
+				graphics.endFill();
+				
+				super.show();
+			}
+		]]>
+	</fx:Script>
+	
+	<kish:KText id="titleText"
+		text="{title}"
+		tags="p,h1,span@class=white"
+		y="10" x="10"
+		/>
+		
+	<kish:KText id="contentText"
+		text="{content}"
+		tags="p,span@class=white"
+		wordWrap="true"
+		y="46" x="10"
+		width="300" height="300"
+		/>
+		
+</kish:AbstractView>

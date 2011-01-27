@@ -12,7 +12,7 @@ package com.client.project.navigation
 	public class MainNavButton extends AbstractInteractiveController 
 	{
 		[View]
-		public var view:MainNavButtonSkin;
+		public var mainNavButtonView:MainNavButtonView;
 		
 		public function MainNavButton( host:DisplayObjectContainer ) 
 		{
@@ -23,7 +23,7 @@ package com.client.project.navigation
 		{
 			super.initialize();
 			NavigationManager.instance.activeNodeSignal.add( activeNodeResponse );
-			view.label.text = data.label;
+			mainNavButtonView.label = data.title;
 		}
 		
 		override protected function click():void
@@ -46,7 +46,7 @@ package com.client.project.navigation
 		
 		override public function set selected( value:Boolean ):void
 		{
-			super.selected = view.selected = value;
+			super.selected = mainNavButtonView.selected = value;
 		}
 	}
 }

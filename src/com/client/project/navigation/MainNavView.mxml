@@ -16,11 +16,11 @@
 			[Conceal]
 			public var fadeOut:FadeOut;
 			
-			override public function initialize():void
+			override public function show():void
 			{
-				super.initialize();
-				
-				graphics.beginFill(0xf1f1f1);
+				super.show();
+
+				graphics.beginFill(0xf1f1f1, 0.5);
 				graphics.drawRect( 0, 0, stage.stageWidth, 20);
 				graphics.endFill();
 			}
@@ -34,12 +34,13 @@
 			
 			private function invalidate():void
 			{
+				// align children horizontally
 				var child:DisplayObject;
 				var prevChild:DisplayObject;
 				for( var i:uint = 0; i<numChildren; i++ )
 				{
 					child = getChildAt(i);
-					if ( prevChild )
+					if( prevChild )
 						child.x = prevChild.x + prevChild.width + 10;
 						
 					prevChild = child;

@@ -1,8 +1,12 @@
 author: Steven Kish
 website: http://www.unstrukt.com
-title: KishCore
+title: KishCore-example
 
-Kish Core is a lightweight ActionScript 3 framework designed for modularity and quick implementation.
+KishCore-example is an example of how to build a tabbed application with the KishCore framework from an architectural standpoint. 
+
+KishCore-example is NOT meant to be an example of a pretty or fashionable UI
+
+KishCore is a lightweight ActionScript 3 framework designed for modularity and quick implementation.
 
 Features:
 - MXML use without the Flex framework
@@ -20,6 +24,6 @@ Prerequisites:
 Compile/Run Directions:
 1. open the file named "build.properties" in the "build" directory
 2. update the "FLEX_HOME" property to reflect the location of your Flex SDK ( must target Flex SDK 4.1 or higher )
-2. update the "run.browser" property to reflect the internet browser application you'd like to test with
-3. save "build.properties"
-4. With Ant, run the default routine of "build.xml" which is found in the "build" directory
+3. update the "run.browser" property to reflect the internet browser you'd like to test with
+4. save "build.properties"
+5. With Ant, run the default routine of "build.xml" which is found in the "build" directory
