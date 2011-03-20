@@ -1,5 +1,6 @@
 package com.client.project.application 
 {
+	import kish.control.ActionRegistrar;
 	import kish.Application;
 	import kish.ApplicationController;
 	import kish.control.AbstractViewController;

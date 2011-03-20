@@ -1,4 +1,5 @@
-package com.client.project.overview {
+package com.client.project.overview 
+{
 	import kish.control.AbstractViewController;
 	import kish.view.AbstractView;
 
@@ -25,10 +26,10 @@ package com.client.project.overview {
 			overviewView.visible = false;
 			overviewView.title = data.title;
 			overviewView.content = data.content;
-			overviewView.addEventListener( MouseEvent.CLICK, _onViewClick );
+			overviewView.addEventListener( MouseEvent.CLICK, _onViewClick, false, 0, true );
 		}
 		
-			private function _onViewClick( e:Event ):void
+		private function _onViewClick( e:Event ):void
 		{
 			hide();
 		}	
