@@ -1,6 +1,7 @@
 package com.client.project.navigation 
 {
 	import kish.control.AbstractInteractiveController;
+	import kish.event.NavigationEvent;
 	import kish.model.NavigationNode;
 	import kish.navigation.NavigationManager;
 
@@ -22,7 +23,7 @@ package com.client.project.navigation
 		override public function initialize():void
 		{
 			super.initialize();
-			NavigationManager.instance.activeNodeSignal.add( activeNodeResponse );
+			NavigationManager.instance.registerAction( activeNodeResponse, NavigationEvent.ACTIVE_NODE_CHANGE );
 			mainNavButtonView.label = data.title;
 		}
 		

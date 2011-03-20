@@ -20,5 +20,10 @@ package com.client.project.section
 			sectionView.title = data.title;
 			sectionView.content = data.content;
 		}
+		
+		override public function show():void
+		{
+			super.show();
+		}
 	}
 }

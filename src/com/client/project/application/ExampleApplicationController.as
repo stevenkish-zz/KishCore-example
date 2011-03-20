@@ -1,9 +1,8 @@
 package com.client.project.application 
 {
-	import kish.control.ActionRegistrar;
 	import kish.Application;
 	import kish.ApplicationController;
-	import kish.control.AbstractViewController;
+	import kish.control.TransitionPhase;
 	import kish.model.NavigationNode;
 	import kish.model.Node;
 	import kish.navigation.NavigationManager;
@@ -65,7 +64,7 @@ package com.client.project.application
 			transitionController.initialize();
 			
 			// create main navigation UI
-			var nav:MainNavController = new MainNavController( _application );
+ 			var nav:MainNavController = new MainNavController( _application );
 			nav.initialize();
 			nav.show();
 			
@@ -83,13 +82,13 @@ package com.client.project.application
 			{
 				_overview = new OverviewController(null, _application);
 				_overview.data = _navigationManager.rootNode;
-				_overview.concealSignal.add(_overviewConcealResponse);
+				_overview.registerAction( _onOverviewConcealed, TransitionPhase.CONCEALED );
 				_overview.initialize();
 			}
 			_overview.show();			
 		}
 		
-		private function _overviewConcealResponse( controller:AbstractViewController ):void 
+		private function _onOverviewConcealed():void 
 		{
 			_application.enabled = true;
 		}		
