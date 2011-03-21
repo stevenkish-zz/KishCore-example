@@ -1,5 +1,6 @@
 package com.client.project.navigation 
 {
+	import kish.event.INavigationEventActionDelegate;
 	import kish.control.AbstractInteractiveController;
 	import kish.event.NavigationEvent;
 	import kish.model.NavigationNode;
@@ -10,7 +11,7 @@ package com.client.project.navigation
 	/**
 	 * @author stevenkish
 	 */
-	public class MainNavButton extends AbstractInteractiveController 
+	public class MainNavButton extends AbstractInteractiveController implements INavigationEventActionDelegate
 	{
 		[View]
 		public var mainNavButtonView:MainNavButtonView;
@@ -23,7 +24,7 @@ package com.client.project.navigation
 		override public function initialize():void
 		{
 			super.initialize();
-			NavigationManager.instance.registerAction( activeNodeResponse, NavigationEvent.ACTIVE_NODE_CHANGE );
+			NavigationManager.instance.registerAction( onActiveNodeChange, NavigationEvent.ACTIVE_NODE_CHANGE );
 			mainNavButtonView.label = data.title;
 		}
 		
@@ -32,17 +33,10 @@ package com.client.project.navigation
 			NavigationManager.instance.activeNode = data as NavigationNode;
 		}
 		
-		private function activeNodeResponse( node:NavigationNode ):void
+		public function onActiveNodeChange( node:NavigationNode ):void
 		{
-			if( !node )
-			{
-				enabled = true;
-				selected = false;
-				return;
-			}
-			
-			enabled = NavigationNode( data ).id != node.id;
-			selected = NavigationNode( data ).id == node.id;
+			selected = node ? ( NavigationNode( data ).id == node.id ) : false;
+			enabled = !selected;
 		}		
 		
 		override public function set selected( value:Boolean ):void

@@ -23,7 +23,6 @@ package com.client.project.overview
 		override public function initialize():void 
 		{
 			super.initialize();
-			overviewView.visible = false;
 			overviewView.title = data.title;
 			overviewView.content = data.content;
 			overviewView.addEventListener( MouseEvent.CLICK, _onViewClick, false, 0, true );
