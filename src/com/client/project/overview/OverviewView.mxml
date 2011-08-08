@@ -7,14 +7,14 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import com.client.project.animation.GenieIn;
-			import com.client.project.animation.GenieOut;
+			import com.client.project.animation.BlackHoleIn;
+			import com.client.project.animation.BlackHoleOut;
 		
 			[Reveal]
-			public var genieIn:GenieIn;
+			public var genieIn:BlackHoleIn;
 		
 			[Conceal]
-			public var genieOut:GenieOut;
+			public var genieOut:BlackHoleOut;
 			
 			[Bindable]
 			public var title:String;
