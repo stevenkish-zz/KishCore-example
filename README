@@ -1,5 +1,5 @@
 author: Steven Kish
-website: http://www.unstrukt.com
+website(s): http://www.unstrukt.com, http://blog.unstrukt.com
 title: KishCore-example
 
 KishCore-example is an example of how to build a tabbed application with the KishCore framework from an architectural standpoint. 
@@ -10,20 +10,20 @@ KishCore is a lightweight ActionScript 3 framework designed for modularity and q
 
 Features:
 - MXML use without the Flex framework
-- metadata dependency injection
+- metadata dependency injection for view/controller coupling
 - fully recursive, xml-driven navigation framework
 - strong OOP principles throughout
 - controller/view pair implementation to help manage initializing, revealing, concealing and disposing of custom views
-- convenience classes such as Draw, KText, KButton etc
-- OVP-based KVideoPlayer class ( progressive )
 
 Prerequisites:
 1. have Ant installed
-2. download Flex 4.1 SDK ( must target Flex 4.1 or higher )
+2. download the free Flex SDK* ( must target Flex SDK 4.1.0 build #16076 or higher )
 
 Compile/Run Directions:
 1. open the file named "build.properties" in the "build" directory
-2. update the "FLEX_HOME" property to reflect the location of your Flex SDK ( must target Flex SDK 4.1 or higher )
+2. update the "FLEX_HOME" property to reflect the location of your Flex SDK*
 3. update the "run.browser" property to reflect the internet browser you'd like to test with
 4. save "build.properties"
 5. With Ant, run the default routine of "build.xml" which is found in the "build" directory
+
+*you can download the necessary Flex SDK here: http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+4

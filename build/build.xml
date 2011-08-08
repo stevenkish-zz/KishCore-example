@@ -30,10 +30,8 @@
 			output="${basedir}/deploy/bin/ExampleApplication.swf">
 			<!-- inlcude SWCs -->
 			<compiler.library-path dir="${basedir}/lib" append="true">
-				<include name="as3-signals-v0.7.swc"/>
 				<include name="greensock.swc"/>
 				<include name="kishcore.swc"/>
-				<include name="ovp_core.swc"/>
 			</compiler.library-path>
 		</mxmlc>
 	</target>
