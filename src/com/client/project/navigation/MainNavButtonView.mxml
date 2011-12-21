@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<kish:AbstractView xmlns:kish="library://www.unstukt.com/kishcore"
+<kish:AbstractInteractiveView xmlns:kish="library://www.unstukt.com/kishcore"
 	xmlns:mx="library://ns.adobe.com/flex/mx" 
 	xmlns:fx="http://ns.adobe.com/mxml/2009" 
 	>
@@ -19,4 +19,4 @@
 	
 	<kish:KText id="labelText" text="{label}"/>
 	
-</kish:AbstractView>
+</kish:AbstractInteractiveView>
